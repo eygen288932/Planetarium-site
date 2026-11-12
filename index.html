@@ -33,20 +33,9 @@
     overflow-x: hidden;
     min-height: 100vh;
   }
-
-  #stars {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-  }
+  #stars { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
   .nebula {
-    position: fixed;
-    inset: -10%;
-    z-index: 0;
-    pointer-events: none;
+    position: fixed; inset: -10%; z-index: 0; pointer-events: none;
     background:
       radial-gradient(ellipse 600px 500px at 15% 20%, rgba(60, 90, 200, 0.18), transparent 60%),
       radial-gradient(ellipse 700px 600px at 85% 70%, rgba(140, 60, 180, 0.14), transparent 60%),
@@ -60,247 +49,129 @@
     to   { transform: translate(-20px, 10px) scale(1.05); }
   }
   .vignette {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
     background: radial-gradient(ellipse at 50% 30%, transparent 20%, rgba(2, 4, 10, 0.7) 100%);
   }
-
   main, header, footer { position: relative; z-index: 1; }
 
   header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    position: sticky; top: 0; z-index: 10;
     padding: 16px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
     backdrop-filter: blur(12px);
     background: rgba(2, 4, 10, 0.55);
     border-bottom: 1px solid var(--border);
   }
   .logo {
     font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    font-size: 14px;
+    font-weight: 700; letter-spacing: 0.15em; font-size: 14px;
     color: var(--fg);
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: flex; align-items: center; gap: 10px;
     flex-shrink: 0;
   }
   .logo-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
+    width: 10px; height: 10px; border-radius: 50%;
     background: var(--accent);
     box-shadow: 0 0 12px var(--accent), 0 0 24px rgba(127, 180, 255, 0.4);
     animation: logoPulse 2s ease-in-out infinite;
   }
-  @keyframes logoPulse {
-    50% { opacity: 0.5; transform: scale(0.85); }
-  }
-  .header-right {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-  }
-  header nav {
-    display: flex;
-    gap: 22px;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-  header nav a {
-    color: var(--dim);
-    text-decoration: none;
-    transition: color 0.2s;
-    white-space: nowrap;
-  }
+  @keyframes logoPulse { 50% { opacity: 0.5; transform: scale(0.85); } }
+  .header-right { display: flex; align-items: center; gap: 22px; }
+  header nav { display: flex; gap: 22px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; }
+  header nav a { color: var(--dim); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
   header nav a:hover { color: var(--fg); }
-
   .lang-select {
     background: rgba(20, 27, 44, 0.7);
     color: var(--fg);
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 6px 10px;
-    font: inherit;
-    font-size: 13px;
+    font: inherit; font-size: 13px;
     cursor: pointer;
     transition: border-color 0.2s, background 0.2s;
     flex-shrink: 0;
   }
-  .lang-select:hover,
-  .lang-select:focus {
+  .lang-select:hover, .lang-select:focus {
     border-color: var(--border-strong);
     background: rgba(30, 40, 60, 0.9);
     outline: none;
   }
 
   .hero {
-    max-width: 1280px;
-    margin: 0 auto;
+    max-width: 1280px; margin: 0 auto;
     padding: 60px 32px 80px;
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: center;
     min-height: calc(100vh - 70px);
   }
   .hero-content { max-width: 640px; }
   .version-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 14px;
-    border-radius: 100px;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 14px; border-radius: 100px;
     background: rgba(94, 224, 160, 0.08);
     border: 1px solid rgba(94, 224, 160, 0.35);
     color: var(--green);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
     margin-bottom: 24px;
   }
   .version-badge::before {
-    content: '';
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--green);
-    box-shadow: 0 0 8px var(--green);
+    content: ''; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--green); box-shadow: 0 0 8px var(--green);
     animation: logoPulse 2s ease-in-out infinite;
   }
   h1 {
     font-family: 'Orbitron', sans-serif;
-    font-weight: 900;
-    font-size: clamp(38px, 6.5vw, 84px);
-    line-height: 0.95;
-    letter-spacing: -0.01em;
+    font-weight: 900; font-size: clamp(38px, 6.5vw, 84px); line-height: 0.95; letter-spacing: -0.01em;
     margin: 0 0 24px;
     background: linear-gradient(135deg, #ffffff 0%, #c9d8ff 40%, #7fb4ff 70%, #ffd9a0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
   h1 span {
-    display: block;
-    font-size: 0.4em;
-    letter-spacing: 0.3em;
-    color: var(--accent);
-    -webkit-text-fill-color: var(--accent);
-    margin-top: 12px;
-    font-weight: 500;
+    display: block; font-size: 0.4em; letter-spacing: 0.3em;
+    color: var(--accent); -webkit-text-fill-color: var(--accent);
+    margin-top: 12px; font-weight: 500;
   }
-  .tagline {
-    font-size: clamp(15px, 1.3vw, 18px);
-    color: var(--dim);
-    margin: 0 0 32px;
-    max-width: 560px;
-  }
+  .tagline { font-size: clamp(15px, 1.3vw, 18px); color: var(--dim); margin: 0 0 32px; max-width: 560px; }
   .tagline strong { color: var(--fg); font-weight: 600; }
 
-  .cta-row {
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-    align-items: center;
-  }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
   .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 28px;
-    border-radius: 12px;
-    font: inherit;
-    font-weight: 600;
-    font-size: 15px;
-    text-decoration: none;
-    cursor: pointer;
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 28px; border-radius: 12px;
+    font: inherit; font-weight: 600; font-size: 15px;
+    text-decoration: none; cursor: pointer;
     transition: all 0.25s ease;
     border: 1px solid transparent;
   }
   .btn-primary {
-    background: linear-gradient(135deg, #7fb4ff, #4a7fe0);
-    color: #02040a;
+    background: linear-gradient(135deg, #7fb4ff, #4a7fe0); color: #02040a;
     box-shadow: 0 0 0 0 rgba(127, 180, 255, 0.5), 0 8px 30px rgba(74, 127, 224, 0.35);
   }
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 0 4px rgba(127, 180, 255, 0.15), 0 12px 40px rgba(74, 127, 224, 0.5);
-  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 0 4px rgba(127, 180, 255, 0.15), 0 12px 40px rgba(74, 127, 224, 0.5); }
   .btn-primary svg { width: 18px; height: 18px; }
-  .btn-secondary {
-    background: rgba(20, 27, 44, 0.7);
-    color: var(--fg);
-    border-color: var(--border);
-  }
-  .btn-secondary:hover {
-    border-color: var(--border-strong);
-    background: rgba(30, 40, 60, 0.9);
-    transform: translateY(-2px);
-  }
+  .btn-secondary { background: rgba(20, 27, 44, 0.7); color: var(--fg); border-color: var(--border); }
+  .btn-secondary:hover { border-color: var(--border-strong); background: rgba(30, 40, 60, 0.9); transform: translateY(-2px); }
 
-  .hero-meta {
-    margin-top: 28px;
-    font-size: 13px;
-    color: var(--dim);
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
+  .hero-meta { margin-top: 28px; font-size: 13px; color: var(--dim); display: flex; gap: 10px; flex-wrap: wrap; }
   .pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 5px 12px;
-    border-radius: 100px;
-    background: rgba(20, 27, 44, 0.6);
-    border: 1px solid var(--border);
-    color: var(--dim);
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 12px; border-radius: 100px;
+    background: rgba(20, 27, 44, 0.6); border: 1px solid var(--border); color: var(--dim);
   }
   .pill strong { color: var(--fg); font-weight: 500; }
-  .pill.vulkan {
-    background: rgba(255, 60, 100, 0.07);
-    border-color: rgba(255, 60, 100, 0.3);
-    color: #ff8aa4;
-  }
+  .pill.vulkan { background: rgba(255, 60, 100, 0.07); border-color: rgba(255, 60, 100, 0.3); color: #ff8aa4; }
   .pill.vulkan strong { color: #ff8aa4; }
-  .pill.windows {
-    background: rgba(0, 164, 239, 0.08);
-    border-color: rgba(0, 164, 239, 0.35);
-    color: #7fc6ff;
-  }
+  .pill.windows { background: rgba(0, 164, 239, 0.08); border-color: rgba(0, 164, 239, 0.35); color: #7fc6ff; }
   .pill.windows strong { color: #7fc6ff; }
 
-  .orbit-visual {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1;
-    max-width: 520px;
-    margin: 0 auto;
-  }
+  .orbit-visual { position: relative; width: 100%; aspect-ratio: 1; max-width: 520px; margin: 0 auto; }
   .orbit-visual::before {
-    content: '';
-    position: absolute;
-    inset: 0;
+    content: ''; position: absolute; inset: 0;
     background: radial-gradient(circle at center, rgba(127, 180, 255, 0.06), transparent 60%);
     border-radius: 50%;
   }
   .sun-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 44px;
-    height: 44px;
-    margin: -22px 0 0 -22px;
+    position: absolute; top: 50%; left: 50%;
+    width: 44px; height: 44px; margin: -22px 0 0 -22px;
     border-radius: 50%;
     background: radial-gradient(circle at 35% 35%, #fff6c8, #ffb53d 55%, #e8730c 90%);
     box-shadow:
@@ -310,35 +181,21 @@
     animation: sunPulse 3s ease-in-out infinite;
     z-index: 3;
   }
-  @keyframes sunPulse {
-    50% { transform: scale(1.06); }
-  }
+  @keyframes sunPulse { 50% { transform: scale(1.06); } }
   .orbit {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 50%;
-    border: 1px solid rgba(127, 180, 255, 0.15);
+    position: absolute; top: 50%; left: 50%;
+    border-radius: 50%; border: 1px solid rgba(127, 180, 255, 0.15);
     transform: translate(-50%, -50%);
     animation: orbitSpin linear infinite;
   }
-  .orbit::after {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: 50%;
-    box-shadow: inset 0 0 30px rgba(127, 180, 255, 0.05);
-  }
+  .orbit::after { content: ''; position: absolute; inset: -1px; border-radius: 50%; box-shadow: inset 0 0 30px rgba(127, 180, 255, 0.05); }
   @keyframes orbitSpin {
     from { transform: translate(-50%, -50%) rotate(0deg); }
     to   { transform: translate(-50%, -50%) rotate(360deg); }
   }
   .planet {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
+    position: absolute; top: 50%; left: 0;
+    border-radius: 50%; transform: translate(-50%, -50%);
     box-shadow: inset -3px -3px 8px rgba(0,0,0,0.55), 0 0 10px rgba(255,255,255,0.15);
     animation: orbitSpin linear infinite reverse;
   }
@@ -355,226 +212,92 @@
   .p-jupiter { width: 26px; height: 26px; background: radial-gradient(circle at 35% 35%, #f4ead6, #c9764a 55%, #a86b4a); }
   .p-saturn  { width: 20px; height: 20px; background: radial-gradient(circle at 35% 35%, #f3e6c0, #bfa36a); }
   .p-saturn::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 40px;
-    height: 8px;
-    margin: -4px 0 0 -20px;
-    border-radius: 50%;
-    border: 1.5px solid rgba(232, 214, 164, 0.7);
-    transform: rotate(-20deg);
+    content: ''; position: absolute; top: 50%; left: 50%;
+    width: 40px; height: 8px; margin: -4px 0 0 -20px;
+    border-radius: 50%; border: 1.5px solid rgba(232, 214, 164, 0.7); transform: rotate(-20deg);
   }
 
-  .section {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 80px 32px;
-  }
+  .section { max-width: 1280px; margin: 0 auto; padding: 80px 32px; }
   .section-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: clamp(24px, 3vw, 36px);
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    margin: 0 0 12px;
-    color: var(--fg);
+    font-size: clamp(24px, 3vw, 36px); font-weight: 700; letter-spacing: -0.01em;
+    margin: 0 0 12px; color: var(--fg);
   }
-  .section-sub {
-    color: var(--dim);
-    font-size: 16px;
-    margin: 0 0 48px;
-    max-width: 700px;
-  }
+  .section-sub { color: var(--dim); font-size: 16px; margin: 0 0 48px; max-width: 700px; }
 
-  .features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 16px;
-  }
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
   .feature {
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 24px;
-    backdrop-filter: blur(8px);
+    background: var(--panel); border: 1px solid var(--border); border-radius: 16px;
+    padding: 24px; backdrop-filter: blur(8px);
     transition: all 0.25s ease;
   }
-  .feature:hover {
-    border-color: var(--border-strong);
-    transform: translateY(-3px);
-    background: rgba(20, 28, 48, 0.75);
-  }
+  .feature:hover { border-color: var(--border-strong); transform: translateY(-3px); background: rgba(20, 28, 48, 0.75); }
   .feature-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background: rgba(127, 180, 255, 0.1);
-    border: 1px solid rgba(127, 180, 255, 0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 14px;
-    color: var(--accent);
-    font-size: 20px;
+    width: 40px; height: 40px; border-radius: 10px;
+    background: rgba(127, 180, 255, 0.1); border: 1px solid rgba(127, 180, 255, 0.25);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px; color: var(--accent); font-size: 20px;
   }
-  .feature h3 {
-    font-size: 16px;
-    margin: 0 0 6px;
-    font-weight: 600;
-    color: var(--fg);
-  }
-  .feature p {
-    color: var(--dim);
-    font-size: 14px;
-    margin: 0;
-    line-height: 1.5;
-  }
+  .feature h3 { font-size: 16px; margin: 0 0 6px; font-weight: 600; color: var(--fg); }
+  .feature p { color: var(--dim); font-size: 14px; margin: 0; line-height: 1.5; }
 
-  .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 16px;
-    margin-top: 8px;
-  }
+  .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 8px; }
   .tech-card {
     background: linear-gradient(135deg, rgba(20, 28, 48, 0.7), rgba(14, 20, 36, 0.7));
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 22px 24px;
-    backdrop-filter: blur(8px);
+    border: 1px solid var(--border); border-radius: 16px;
+    padding: 22px 24px; backdrop-filter: blur(8px);
   }
-  .tech-card .label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--dim);
-    margin-bottom: 8px;
-  }
-  .tech-card .value {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--fg);
-    margin-bottom: 4px;
-  }
+  .tech-card .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--dim); margin-bottom: 8px; }
+  .tech-card .value { font-family: 'Orbitron', sans-serif; font-size: 22px; font-weight: 700; color: var(--fg); margin-bottom: 4px; }
   .tech-card .value.vulkan { color: #ff8aa4; }
   .tech-card .value.windows { color: #7fc6ff; }
-  .tech-card .desc {
-    font-size: 13px;
-    color: var(--dim);
-    line-height: 1.5;
-  }
+  .tech-card .desc { font-size: 13px; color: var(--dim); line-height: 1.5; }
 
-  .req-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-  }
+  .req-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
   .req-card {
-    position: relative;
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 24px;
-    backdrop-filter: blur(8px);
-    overflow: hidden;
+    position: relative; background: var(--panel); border: 1px solid var(--border);
+    border-radius: 16px; padding: 24px; backdrop-filter: blur(8px); overflow: hidden;
   }
   .req-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
     background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
   }
   .req-card.min::before  { background: linear-gradient(90deg, transparent, var(--accent), transparent); }
   .req-card.rec::before  { background: linear-gradient(90deg, transparent, var(--green), transparent); }
   .req-card.max::before  { background: linear-gradient(90deg, transparent, var(--purple), transparent); }
   .req-card h4 {
-    margin: 0 0 14px;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    margin: 0 0 14px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;
     font-family: 'Orbitron', sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; justify-content: space-between; align-items: center;
   }
   .req-card.min h4 { color: var(--accent); }
   .req-card.rec h4 { color: var(--green); }
   .req-card.max h4 { color: var(--purple); }
-  .req-card h4 .level {
-    font-size: 10px;
-    color: var(--dim);
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: none;
-  }
-  .req-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 14px;
-    color: var(--dim);
-  }
-  .req-card li {
-    padding: 7px 0;
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    border-bottom: 1px dashed rgba(127, 180, 255, 0.08);
-    line-height: 1.4;
-  }
+  .req-card h4 .level { font-size: 10px; color: var(--dim); font-weight: 500; letter-spacing: 0.05em; text-transform: none; }
+  .req-card ul { list-style: none; padding: 0; margin: 0; font-size: 14px; color: var(--dim); }
+  .req-card li { padding: 7px 0; display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dashed rgba(127, 180, 255, 0.08); line-height: 1.4; }
   .req-card li:last-child { border-bottom: none; }
-  .req-card li > span:first-child {
-    flex-shrink: 0;
-    color: var(--dim);
-    opacity: 0.85;
-  }
-  .req-card li strong {
-    color: var(--fg);
-    font-weight: 500;
-    text-align: right;
-  }
+  .req-card li > span:first-child { flex-shrink: 0; color: var(--dim); opacity: 0.85; }
+  .req-card li strong { color: var(--fg); font-weight: 500; text-align: right; }
   .req-note {
-    margin-top: 24px;
-    padding: 16px 20px;
-    background: rgba(0, 164, 239, 0.06);
-    border: 1px solid rgba(0, 164, 239, 0.25);
-    border-radius: 12px;
-    font-size: 14px;
-    color: var(--dim);
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    line-height: 1.55;
+    margin-top: 24px; padding: 16px 20px;
+    background: rgba(0, 164, 239, 0.06); border: 1px solid rgba(0, 164, 239, 0.25);
+    border-radius: 12px; font-size: 14px; color: var(--dim);
+    display: flex; gap: 12px; align-items: flex-start; line-height: 1.55;
   }
   .req-note svg { flex-shrink: 0; color: var(--windows); margin-top: 2px; }
 
-  .versions-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-top: 40px;
-  }
+  .versions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
   .version-card {
-    position: relative;
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 32px;
-    backdrop-filter: blur(8px);
-    overflow: hidden;
+    position: relative; background: var(--panel); border: 1px solid var(--border);
+    border-radius: 20px; padding: 32px; backdrop-filter: blur(8px); overflow: hidden;
   }
   .version-card.stable {
     border-color: rgba(94, 224, 160, 0.35);
     background: linear-gradient(135deg, rgba(94, 224, 160, 0.05), rgba(14, 20, 36, 0.6));
   }
   .version-card.stable::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
     background: linear-gradient(90deg, transparent, var(--green), transparent);
   }
   .version-card.dev {
@@ -583,240 +306,97 @@
     opacity: 0.9;
   }
   .version-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px; border-radius: 6px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
     margin-bottom: 18px;
   }
-  .version-tag.stable {
-    background: rgba(94, 224, 160, 0.15);
-    color: var(--green);
-    border: 1px solid rgba(94, 224, 160, 0.3);
-  }
-  .version-tag.dev {
-    background: rgba(255, 210, 74, 0.12);
-    color: var(--yellow);
-    border: 1px solid rgba(255, 210, 74, 0.3);
-  }
-  .version-num {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 44px;
-    font-weight: 900;
-    letter-spacing: -0.02em;
-    margin: 0 0 4px;
-    color: var(--fg);
-    line-height: 1;
-  }
+  .version-tag.stable { background: rgba(94, 224, 160, 0.15); color: var(--green); border: 1px solid rgba(94, 224, 160, 0.3); }
+  .version-tag.dev { background: rgba(255, 210, 74, 0.12); color: var(--yellow); border: 1px solid rgba(255, 210, 74, 0.3); }
+  .version-num { font-family: 'Orbitron', sans-serif; font-size: 44px; font-weight: 900; letter-spacing: -0.02em; margin: 0 0 4px; color: var(--fg); line-height: 1; }
   .version-card.dev .version-num { color: var(--dim); }
-  .version-subtitle {
-    color: var(--dim);
-    font-size: 14px;
-    margin: 0 0 8px;
-  }
-  .version-platform {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    color: var(--dim);
-    margin-bottom: 22px;
-  }
-  .version-features {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 28px;
-    font-size: 14px;
-    color: var(--dim);
-  }
-  .version-features li {
-    padding: 6px 0;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-  }
+  .version-subtitle { color: var(--dim); font-size: 14px; margin: 0 0 8px; }
+  .version-platform { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--dim); margin-bottom: 22px; }
+  .version-features { list-style: none; padding: 0; margin: 0 0 28px; font-size: 14px; color: var(--dim); }
+  .version-features li { padding: 6px 0; display: flex; align-items: flex-start; gap: 10px; }
   .version-features li::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    flex-shrink: 0;
-    margin-top: 8px;
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent); flex-shrink: 0; margin-top: 8px;
   }
   .version-card.stable .version-features li::before { background: var(--green); }
   .version-card.dev .version-features li::before { background: var(--yellow); }
   .version-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 22px;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 14px;
-    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 12px 22px; border-radius: 10px;
+    font-weight: 600; font-size: 14px; text-decoration: none;
     transition: all 0.25s;
   }
-  .version-cta.primary {
-    background: var(--green);
-    color: #02040a;
-  }
-  .version-cta.primary:hover {
-    background: #7aecb8;
-    transform: translateY(-2px);
-  }
+  .version-cta.primary { background: var(--green); color: #02040a; }
+  .version-cta.primary:hover { background: #7aecb8; transform: translateY(-2px); }
   .version-cta.locked {
-    background: rgba(255, 210, 74, 0.08);
-    color: var(--yellow);
+    background: rgba(255, 210, 74, 0.08); color: var(--yellow);
     border: 1px solid rgba(255, 210, 74, 0.25);
-    cursor: not-allowed;
-    pointer-events: none;
+    cursor: not-allowed; pointer-events: none;
   }
 
-  .roadmap {
-    position: relative;
-    margin-top: 40px;
-    padding-left: 40px;
-  }
+  .roadmap { position: relative; margin-top: 40px; padding-left: 40px; }
   .roadmap::before {
-    content: '';
-    position: absolute;
-    top: 8px;
-    bottom: 8px;
-    left: 14px;
-    width: 2px;
-    background: linear-gradient(180deg,
-      var(--green) 0%,
-      var(--yellow) 30%,
-      var(--accent) 60%,
-      var(--purple) 100%);
-    border-radius: 2px;
-    opacity: 0.6;
+    content: ''; position: absolute; top: 8px; bottom: 8px; left: 14px; width: 2px;
+    background: linear-gradient(180deg, var(--green) 0%, var(--yellow) 30%, var(--accent) 60%, var(--purple) 100%);
+    border-radius: 2px; opacity: 0.6;
   }
-  .roadmap-item {
-    position: relative;
-    padding: 0 0 40px 30px;
-  }
+  .roadmap-item { position: relative; padding: 0 0 40px 30px; }
   .roadmap-item:last-child { padding-bottom: 0; }
   .roadmap-marker {
-    position: absolute;
-    left: -40px;
-    top: 2px;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--bg-2);
-    border: 2px solid var(--accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 700;
-    z-index: 2;
+    position: absolute; left: -40px; top: 2px;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--bg-2); border: 2px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 700; z-index: 2;
     box-shadow: 0 0 0 4px var(--bg);
   }
-  .roadmap-item.done .roadmap-marker {
-    border-color: var(--green);
-    background: rgba(94, 224, 160, 0.1);
-    color: var(--green);
-  }
+  .roadmap-item.done .roadmap-marker { border-color: var(--green); background: rgba(94, 224, 160, 0.1); color: var(--green); }
   .roadmap-item.current .roadmap-marker {
-    border-color: var(--yellow);
-    background: rgba(255, 210, 74, 0.1);
-    color: var(--yellow);
+    border-color: var(--yellow); background: rgba(255, 210, 74, 0.1); color: var(--yellow);
     animation: markerPulse 2s ease-in-out infinite;
   }
   @keyframes markerPulse {
     0%, 100% { box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px rgba(255, 210, 74, 0.2); }
     50%      { box-shadow: 0 0 0 4px var(--bg), 0 0 0 12px rgba(255, 210, 74, 0); }
   }
-  .roadmap-item.next .roadmap-marker {
-    border-color: var(--accent);
-    background: rgba(127, 180, 255, 0.1);
-    color: var(--accent);
-  }
-  .roadmap-item.future .roadmap-marker {
-    border-color: var(--purple);
-    background: rgba(178, 141, 255, 0.1);
-    color: var(--purple);
-  }
+  .roadmap-item.next .roadmap-marker { border-color: var(--accent); background: rgba(127, 180, 255, 0.1); color: var(--accent); }
+  .roadmap-item.future .roadmap-marker { border-color: var(--purple); background: rgba(178, 141, 255, 0.1); color: var(--purple); }
   .roadmap-tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 3px 9px;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 5px; margin-bottom: 10px;
   }
   .roadmap-item.done .roadmap-tag    { background: rgba(94, 224, 160, 0.12); color: var(--green); }
   .roadmap-item.current .roadmap-tag { background: rgba(255, 210, 74, 0.12); color: var(--yellow); }
   .roadmap-item.next .roadmap-tag    { background: rgba(127, 180, 255, 0.12); color: var(--accent); }
   .roadmap-item.future .roadmap-tag  { background: rgba(178, 141, 255, 0.12); color: var(--purple); }
-  .roadmap-item h3 {
-    margin: 0 0 8px;
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--fg);
-  }
-  .roadmap-item p {
-    margin: 0;
-    color: var(--dim);
-    font-size: 15px;
-    line-height: 1.6;
-    max-width: 720px;
-  }
+  .roadmap-item h3 { margin: 0 0 8px; font-size: 20px; font-weight: 600; color: var(--fg); }
+  .roadmap-item p { margin: 0; color: var(--dim); font-size: 15px; line-height: 1.6; max-width: 720px; }
   .roadmap-item p strong { color: var(--fg); }
-  .roadmap-item ul {
-    margin: 10px 0 0;
-    padding-left: 20px;
-    color: var(--dim);
-    font-size: 15px;
-    line-height: 1.6;
-  }
+  .roadmap-item ul { margin: 10px 0 0; padding-left: 20px; color: var(--dim); font-size: 15px; line-height: 1.6; }
   .roadmap-item ul li { padding: 3px 0; }
   .roadmap-item ul li::marker { color: var(--yellow); }
 
   footer {
-    border-top: 1px solid var(--border);
-    margin-top: 40px;
-    padding: 40px 32px;
-    max-width: 1280px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    font-size: 13px;
-    color: var(--dim);
+    border-top: 1px solid var(--border); margin-top: 40px; padding: 40px 32px;
+    max-width: 1280px; margin-left: auto; margin-right: auto;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
+    font-size: 13px; color: var(--dim);
   }
   footer a { color: var(--accent); text-decoration: none; }
   footer a:hover { text-decoration: underline; }
 
-  @media (max-width: 1100px) {
-    header nav { gap: 14px; font-size: 12px; }
-    .header-right { gap: 14px; }
-  }
+  @media (max-width: 1100px) { header nav { gap: 14px; font-size: 12px; } .header-right { gap: 14px; } }
   @media (max-width: 900px) {
     header { padding: 12px 20px; }
     header nav { display: none; }
-    .hero {
-      grid-template-columns: 1fr;
-      padding: 40px 20px 60px;
-      gap: 40px;
-      text-align: center;
-    }
+    .hero { grid-template-columns: 1fr; padding: 40px 20px 60px; gap: 40px; text-align: center; }
     .hero-content { margin: 0 auto; }
-    .cta-row { justify-content: center; }
-    .hero-meta { justify-content: center; }
+    .cta-row, .hero-meta { justify-content: center; }
     .orbit-visual { max-width: 340px; }
     .orbit-4 { width: 320px; height: 320px; }
     .orbit-3 { width: 240px; height: 240px; }
@@ -873,7 +453,7 @@
         Planetarium
         <span>1 : 1</span>
       </h1>
-      <p class="tagline" data-i18n-html="hero.tagline"><strong>Солнечная система в реальном масштабе</strong> — нативное десктопное приложение на Electron с рендером через <strong>WebGL 2.0 / Vulkan</strong>. Реальные орбиты планет, спутников и комет, аккреционный диск Sgr A* и межзвёздные аппараты — в одном <strong>.exe</strong>, без браузера и без интернета.</p>
+      <p class="tagline" data-i18n-html="hero.tagline"><strong>Солнечная система в реальном масштабе</strong> — нативное десктопное приложение на Electron с рендером через <strong>WebGL 2.0 / Vulkan</strong>. Реальные орбиты планет, спутников и комет, аккреционный диск Sgr A* и галактики — в одном <strong>.exe</strong>, без браузера и без интернета.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="https://eygen.itch.io/planetarium" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -926,9 +506,9 @@
         <p data-i18n="feat.4.desc">Галлея, Энке, Чурюмова-Герасименко, Хейла-Боппа. Плюс пояс астероидов и пояс Койпера с тысячами объектов.</p>
       </div>
       <div class="feature">
-        <div class="feature-icon">🛰️</div>
-        <h3 data-i18n="feat.5.title">Космические аппараты</h3>
-        <p data-i18n="feat.5.desc">Вояджер-1, Новые горизонты и Хаббл с реальными траекториями и орбитами по TLE.</p>
+        <div class="feature-icon">🪨</div>
+        <h3 data-i18n="feat.5.title">Седна и ТНО</h3>
+        <p data-i18n="feat.5.desc">Реальная орбита Седны с перигелием в 2076 году и другие транснептуновые объекты — в реальном масштабе.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">🌌</div>
@@ -936,9 +516,9 @@
         <p data-i18n="feat.6.desc">Млечный Путь со спиральными рукавами и перемычкой, Туманность Андромеды и её спутники M32 и M110.</p>
       </div>
       <div class="feature">
-        <div class="feature-icon">⏱️</div>
-        <h3 data-i18n="feat.7.title">Управление временем</h3>
-        <p data-i18n="feat.7.desc">От ×1 (реальное) до 10 лет в секунду. Обратный ход, пауза, переход на любую дату.</p>
+        <div class="feature-icon">✨</div>
+        <h3 data-i18n="feat.7.title">Полярные сияния</h3>
+        <p data-i18n="feat.7.desc">Магнитные овалы Земли, Юпитера, Сатурна, Урана и Нептуна с корректным наклоном магнитной оси.</p>
       </div>
       <div class="feature">
         <div class="feature-icon">🎨</div>
@@ -981,7 +561,6 @@
     <p class="section-sub" data-i18n="req.sub">Приложение лёгкое: подойдёт даже офисный ПК или старый ноутбук со встроенной графикой. Нужна поддержка WebGL 2.0 (входит в DirectX 11) или Vulkan — приложение использует аппаратное ускорение через Chromium.</p>
 
     <div class="req-grid">
-
       <div class="req-card min">
         <h4><span data-i18n="req.min">Минимальные</span> <span class="level">30 FPS</span></h4>
         <ul>
@@ -993,7 +572,6 @@
           <li><span data-i18n="req.row.disk">Место на диске</span><strong data-i18n="req.min.disk">~300 MB</strong></li>
         </ul>
       </div>
-
       <div class="req-card rec">
         <h4><span data-i18n="req.rec">Рекомендуемые</span> <span class="level">60 FPS</span></h4>
         <ul>
@@ -1005,7 +583,6 @@
           <li><span data-i18n="req.row.disk">Место на диске</span><strong data-i18n="req.rec.disk">~400 MB</strong></li>
         </ul>
       </div>
-
       <div class="req-card max">
         <h4><span data-i18n="req.max">Максимальные</span> <span class="level">60+ FPS</span></h4>
         <ul>
@@ -1017,7 +594,6 @@
           <li><span data-i18n="req.row.storage">Накопитель</span><strong data-i18n="req.max.storage">SSD · ~500 MB</strong></li>
         </ul>
       </div>
-
     </div>
 
     <div class="req-note">
@@ -1044,9 +620,9 @@
           <li data-i18n="ver.stable.f2">Спутники Юпитера, Сатурна, Урана и Нептуна</li>
           <li data-i18n="ver.stable.f3">Кометы с ионными и пылевыми хвостами</li>
           <li data-i18n="ver.stable.f4">Трассируемая чёрная дыра Sgr A*</li>
-          <li data-i18n="ver.stable.f5">Млечный Путь, Андромеда, М32 и M110</li>
-          <li data-i18n="ver.stable.f6">Атмосферы, сияния, рельеф и облака</li>
-          <li data-i18n="ver.stable.f7">Управление временем от ×1 до 10 лет/сек</li>
+          <li data-i18n="ver.stable.f5">Млечный Путь, Андромеда, M32 и M110</li>
+          <li data-i18n="ver.stable.f6">Атмосферы, полярные сияния, рельеф и облака</li>
+          <li data-i18n="ver.stable.f7">Седна, Олимп на Марсе, реалистичный рельеф</li>
         </ul>
         <a class="version-cta primary" href="https://eygen.itch.io/planetarium" target="_blank" rel="noopener" data-i18n="ver.stable.cta">Скачать .exe v1.7 →</a>
       </div>
@@ -1057,8 +633,8 @@
         <p class="version-subtitle" data-i18n="ver.dev.sub">В разработке · недоступна публично</p>
         <div class="version-platform">🪟 Windows .exe · <span data-i18n="ver.dev.platform">приватный билд</span></div>
         <ul class="version-features">
-          <li data-i18n="ver.dev.f1">Полное управление временем — все режимы и переходы</li>
-          <li data-i18n="ver.dev.f2">3 новых аппарата: Хаббл, Вояджер-1, Новые горизонты — с реальной историей с точностью до минут</li>
+          <li data-i18n="ver.dev.f1">Полное управление временем — от ×1 до 10 лет в секунду, все режимы и переходы</li>
+          <li data-i18n="ver.dev.f2">3 новых аппарата: Хаббл, Вояджер-1, Новые горизонты — с реальной историей полёта с точностью до минут</li>
           <li data-i18n="ver.dev.f3">Обновлённые атмосферы — новая физика (рэлеевское и ми-рассеяние одним лучом)</li>
           <li data-i18n="ver.dev.f4">Багфиксы и оптимизация рендера</li>
         </ul>
@@ -1078,7 +654,7 @@
         <div class="roadmap-marker">✓</div>
         <div class="roadmap-tag" data-i18n="rm.done.tag">Выпущено</div>
         <h3 data-i18n="rm.done.title">v1.7 — Стабильный релиз</h3>
-        <p data-i18n="rm.done.text">Полноценная Солнечная система: планеты, карликовые планеты, спутники, кометы, пояса астероидов и Койпера, чёрная дыра Sgr A*, галактики Млечный Путь и Андромеда, космические аппараты и управление временем.</p>
+        <p data-i18n="rm.done.text">Полноценная Солнечная система: планеты, карликовые планеты, спутники, кометы, пояса астероидов и Койпера, чёрная дыра Sgr A*, галактики Млечный Путь и Андромеда, полярные сияния и реалистичный рельеф.</p>
       </div>
 
       <div class="roadmap-item current">
@@ -1087,7 +663,7 @@
         <h3 data-i18n="rm.cur.title">v1.7.1 — Приватная dev-сборка</h3>
         <p data-i18n="rm.cur.text">Закрытая ветка с существенными улучшениями по трём направлениям. Сборка пока недоступна для скачивания.</p>
         <ul>
-          <li data-i18n-html="rm.cur.li1"><strong>Полное управление временем</strong> — все режимы и переходы в одном месте</li>
+          <li data-i18n-html="rm.cur.li1"><strong>Полное управление временем</strong> — от ×1 до 10 лет в секунду, обратный ход, пауза и переход на любую дату</li>
           <li data-i18n-html="rm.cur.li2"><strong>3 новых космических аппарата</strong> — Хаббл, Вояджер-1 и Новые горизонты с реальной историей полёта с точностью до минут</li>
           <li data-i18n-html="rm.cur.li3"><strong>Обновлённые атмосферы</strong> — новая физика: рэлеевское и ми-рассеяние одним лучом, тонкая светящаяся кромка у поверхности и плавный переход в чёрный выше</li>
         </ul>
@@ -1130,12 +706,9 @@
     let w = 0, h = 0, stars = [], shooting = [], dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     function resize() {
-      w = window.innerWidth;
-      h = window.innerHeight;
-      canvas.width = w * dpr;
-      canvas.height = h * dpr;
-      canvas.style.width = w + 'px';
-      canvas.style.height = h + 'px';
+      w = window.innerWidth; h = window.innerHeight;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       initStars();
     }
@@ -1155,11 +728,7 @@
     }
     function spawnShooting() {
       if (Math.random() > 0.004) return;
-      shooting.push({
-        x: Math.random() * w, y: Math.random() * h * 0.4,
-        vx: -3 - Math.random() * 3, vy: 1.5 + Math.random() * 1.5,
-        life: 60 + Math.random() * 40, maxLife: 100
-      });
+      shooting.push({ x: Math.random() * w, y: Math.random() * h * 0.4, vx: -3 - Math.random() * 3, vy: 1.5 + Math.random() * 1.5, life: 60 + Math.random() * 40, maxLife: 100 });
     }
     function frame(t) {
       ctx.clearRect(0, 0, w, h);
@@ -1171,10 +740,8 @@
         if (s.tint < 0.7) color = `rgba(220, 230, 255, ${a})`;
         else if (s.tint < 0.9) color = `rgba(255, 230, 200, ${a})`;
         else color = `rgba(180, 200, 255, ${a})`;
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-        ctx.fillStyle = color;
-        ctx.fill();
+        ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = color; ctx.fill();
       }
       spawnShooting();
       for (let i = shooting.length - 1; i >= 0; i--) {
@@ -1185,10 +752,8 @@
         grad.addColorStop(0, `rgba(255,255,255,${a})`);
         grad.addColorStop(1, 'rgba(255,255,255,0)');
         ctx.strokeStyle = grad; ctx.lineWidth = 1.6;
-        ctx.beginPath();
-        ctx.moveTo(sh.x, sh.y);
-        ctx.lineTo(sh.x - sh.vx * 12, sh.y - sh.vy * 12);
-        ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(sh.x, sh.y);
+        ctx.lineTo(sh.x - sh.vx * 12, sh.y - sh.vy * 12); ctx.stroke();
         if (sh.life <= 0 || sh.x < -50 || sh.y > h + 50) shooting.splice(i, 1);
       }
       requestAnimationFrame(frame);
@@ -1208,7 +773,7 @@
       'nav.versions': 'Версии',
       'nav.roadmap': 'Roadmap',
       'hero.badge': 'v1.7 · Windows .exe · Стабильная',
-      'hero.tagline': '<strong>Солнечная система в реальном масштабе</strong> — нативное десктопное приложение на Electron с рендером через <strong>WebGL 2.0 / Vulkan</strong>. Реальные орбиты планет, спутников и комет, аккреционный диск Sgr A* и межзвёздные аппараты — в одном <strong>.exe</strong>, без браузера и без интернета.',
+      'hero.tagline': '<strong>Солнечная система в реальном масштабе</strong> — нативное десктопное приложение на Electron с рендером через <strong>WebGL 2.0 / Vulkan</strong>. Реальные орбиты планет, спутников и комет, аккреционный диск Sgr A* и галактики — в одном <strong>.exe</strong>, без браузера и без интернета.',
       'hero.download': 'Скачать для Windows (.exe)',
       'hero.roadmap': 'Смотреть roadmap',
       'hero.pill.offline': 'Офлайн',
@@ -1224,12 +789,12 @@
       'feat.3.desc': 'Трассировка лучей в метрике Шварцшильда: фотонное кольцо, аккреционный диск и гравитационное линзирование.',
       'feat.4.title': 'Кометы и пояса',
       'feat.4.desc': 'Галлея, Энке, Чурюмова-Герасименко, Хейла-Боппа. Плюс пояс астероидов и пояс Койпера с тысячами объектов.',
-      'feat.5.title': 'Космические аппараты',
-      'feat.5.desc': 'Вояджер-1, Новые горизонты и Хаббл с реальными траекториями и орбитами по TLE.',
+      'feat.5.title': 'Седна и ТНО',
+      'feat.5.desc': 'Реальная орбита Седны с перигелием в 2076 году и другие транснептуновые объекты — в реальном масштабе.',
       'feat.6.title': 'Галактики',
       'feat.6.desc': 'Млечный Путь со спиральными рукавами и перемычкой, Туманность Андромеды и её спутники M32 и M110.',
-      'feat.7.title': 'Управление временем',
-      'feat.7.desc': 'От ×1 (реальное) до 10 лет в секунду. Обратный ход, пауза, переход на любую дату.',
+      'feat.7.title': 'Полярные сияния',
+      'feat.7.desc': 'Магнитные овалы Земли, Юпитера, Сатурна, Урана и Нептуна с корректным наклоном магнитной оси.',
       'feat.8.title': 'Процедурные текстуры',
       'feat.8.desc': 'Атмосферы, кольца, рельеф и звёздные поля генерируются прямо в приложении — минимум внешних ассетов.',
 
@@ -1285,15 +850,15 @@
       'ver.stable.f2': 'Спутники Юпитера, Сатурна, Урана и Нептуна',
       'ver.stable.f3': 'Кометы с ионными и пылевыми хвостами',
       'ver.stable.f4': 'Трассируемая чёрная дыра Sgr A*',
-      'ver.stable.f5': 'Млечный Путь, Андромеда, М32 и M110',
-      'ver.stable.f6': 'Атмосферы, сияния, рельеф и облака',
-      'ver.stable.f7': 'Управление временем от ×1 до 10 лет/сек',
+      'ver.stable.f5': 'Млечный Путь, Андромеда, M32 и M110',
+      'ver.stable.f6': 'Атмосферы, полярные сияния, рельеф и облака',
+      'ver.stable.f7': 'Седна, Олимп на Марсе, реалистичный рельеф',
       'ver.stable.cta': 'Скачать .exe v1.7 →',
       'ver.dev.tag': '🔒 Dev · Приватная сборка',
       'ver.dev.sub': 'В разработке · недоступна публично',
       'ver.dev.platform': 'приватный билд',
-      'ver.dev.f1': 'Полное управление временем — все режимы и переходы',
-      'ver.dev.f2': '3 новых аппарата: Хаббл, Вояджер-1, Новые горизонты — с реальной историей с точностью до минут',
+      'ver.dev.f1': 'Полное управление временем — от ×1 до 10 лет в секунду, все режимы и переходы',
+      'ver.dev.f2': '3 новых аппарата: Хаббл, Вояджер-1, Новые горизонты — с реальной историей полёта с точностью до минут',
       'ver.dev.f3': 'Обновлённые атмосферы — новая физика (рэлеевское и ми-рассеяние одним лучом)',
       'ver.dev.f4': 'Багфиксы и оптимизация рендера',
       'ver.dev.cta': '🔒 Пока недоступна',
@@ -1302,11 +867,11 @@
       'rm.sub': 'Планы развития приложения — от текущей стабильной сборки к полностью процедурным звёздным системам. Всё по-прежнему в одном .exe.',
       'rm.done.tag': 'Выпущено',
       'rm.done.title': 'v1.7 — Стабильный релиз',
-      'rm.done.text': 'Полноценная Солнечная система: планеты, карликовые планеты, спутники, кометы, пояса астероидов и Койпера, чёрная дыра Sgr A*, галактики Млечный Путь и Андромеда, космические аппараты и управление временем.',
+      'rm.done.text': 'Полноценная Солнечная система: планеты, карликовые планеты, спутники, кометы, пояса астероидов и Койпера, чёрная дыра Sgr A*, галактики Млечный Путь и Андромеда, полярные сияния и реалистичный рельеф.',
       'rm.cur.tag': 'В разработке · приватно',
       'rm.cur.title': 'v1.7.1 — Приватная dev-сборка',
       'rm.cur.text': 'Закрытая ветка с существенными улучшениями по трём направлениям. Сборка пока недоступна для скачивания.',
-      'rm.cur.li1': '<strong>Полное управление временем</strong> — все режимы и переходы в одном месте',
+      'rm.cur.li1': '<strong>Полное управление временем</strong> — от ×1 до 10 лет в секунду, обратный ход, пауза и переход на любую дату',
       'rm.cur.li2': '<strong>3 новых космических аппарата</strong> — Хаббл, Вояджер-1 и Новые горизонты с реальной историей полёта с точностью до минут',
       'rm.cur.li3': '<strong>Обновлённые атмосферы</strong> — новая физика: рэлеевское и ми-рассеяние одним лучом, тонкая светящаяся кромка у поверхности и плавный переход в чёрный выше',
       'rm.next.tag': 'Следующее',
@@ -1328,7 +893,7 @@
       'nav.versions': 'Versions',
       'nav.roadmap': 'Roadmap',
       'hero.badge': 'v1.7 · Windows .exe · Stable',
-      'hero.tagline': '<strong>Solar System at real scale</strong> — native desktop app on Electron rendering through <strong>WebGL 2.0 / Vulkan</strong>. Real orbits of planets, moons and comets, the Sgr A* accretion disk and interstellar probes — all in one <strong>.exe</strong>, no browser, no internet.',
+      'hero.tagline': '<strong>Solar System at real scale</strong> — native desktop app on Electron rendering through <strong>WebGL 2.0 / Vulkan</strong>. Real orbits of planets, moons and comets, the Sgr A* accretion disk and galaxies — all in one <strong>.exe</strong>, no browser, no internet.',
       'hero.download': 'Download for Windows (.exe)',
       'hero.roadmap': 'View roadmap',
       'hero.pill.offline': 'Offline',
@@ -1344,12 +909,12 @@
       'feat.3.desc': 'Ray tracing in the Schwarzschild metric: photon ring, accretion disk and gravitational lensing.',
       'feat.4.title': 'Comets and belts',
       'feat.4.desc': 'Halley, Encke, Churyumov–Gerasimenko, Hale–Bopp. Plus the asteroid belt and Kuiper belt with thousands of objects.',
-      'feat.5.title': 'Spacecraft',
-      'feat.5.desc': 'Voyager 1, New Horizons and Hubble with real trajectories and TLE-based orbits.',
+      'feat.5.title': 'Sedna and TNOs',
+      'feat.5.desc': 'Sedna\'s real orbit with a 2076 perihelion and other trans-Neptunian objects — at real scale.',
       'feat.6.title': 'Galaxies',
       'feat.6.desc': 'The Milky Way with spiral arms and bar, the Andromeda galaxy and its satellites M32 and M110.',
-      'feat.7.title': 'Time control',
-      'feat.7.desc': 'From ×1 (real time) to 10 years per second. Reverse, pause, jump to any date.',
+      'feat.7.title': 'Auroras',
+      'feat.7.desc': 'Magnetic ovals of Earth, Jupiter, Saturn, Uranus and Neptune with correct magnetic axis tilt.',
       'feat.8.title': 'Procedural textures',
       'feat.8.desc': 'Atmospheres, rings, terrain and star fields are generated inside the app — minimal external assets.',
 
@@ -1407,12 +972,12 @@
       'ver.stable.f4': 'Ray-traced black hole Sgr A*',
       'ver.stable.f5': 'Milky Way, Andromeda, M32 and M110',
       'ver.stable.f6': 'Atmospheres, auroras, terrain and clouds',
-      'ver.stable.f7': 'Time control from ×1 to 10 years/s',
+      'ver.stable.f7': 'Sedna, Olympus Mons on Mars, realistic terrain',
       'ver.stable.cta': 'Download .exe v1.7 →',
       'ver.dev.tag': '🔒 Dev · Private build',
       'ver.dev.sub': 'In development · not public',
       'ver.dev.platform': 'private build',
-      'ver.dev.f1': 'Full time control — all modes and transitions',
+      'ver.dev.f1': 'Full time control — from ×1 to 10 years per second, all modes and transitions',
       'ver.dev.f2': '3 new spacecraft: Hubble, Voyager 1, New Horizons — with real mission history to the minute',
       'ver.dev.f3': 'Updated atmospheres — new physics (Rayleigh and Mie scattering in a single ray)',
       'ver.dev.f4': 'Bug fixes and render optimizations',
@@ -1422,11 +987,11 @@
       'rm.sub': 'Development plans — from the current stable build to fully procedural star systems. Still one .exe.',
       'rm.done.tag': 'Released',
       'rm.done.title': 'v1.7 — Stable release',
-      'rm.done.text': 'A complete Solar System: planets, dwarf planets, moons, comets, asteroid and Kuiper belts, the black hole Sgr A*, the Milky Way and Andromeda galaxies, spacecraft and time control.',
+      'rm.done.text': 'A complete Solar System: planets, dwarf planets, moons, comets, asteroid and Kuiper belts, the black hole Sgr A*, the Milky Way and Andromeda galaxies, auroras and realistic terrain.',
       'rm.cur.tag': 'In development · private',
       'rm.cur.title': 'v1.7.1 — Private dev build',
       'rm.cur.text': 'Closed branch with major improvements in three directions. The build is not available for download yet.',
-      'rm.cur.li1': '<strong>Full time control</strong> — all modes and transitions in one place',
+      'rm.cur.li1': '<strong>Full time control</strong> — from ×1 to 10 years per second, reverse, pause and jump to any date',
       'rm.cur.li2': '<strong>3 new spacecraft</strong> — Hubble, Voyager 1 and New Horizons with real mission history to the minute',
       'rm.cur.li3': '<strong>Updated atmospheres</strong> — new physics: Rayleigh and Mie scattering in a single ray, a thin glowing edge at the surface and a smooth fade to black above',
       'rm.next.tag': 'Next',
@@ -1448,7 +1013,7 @@
       'nav.versions': 'Versões',
       'nav.roadmap': 'Roadmap',
       'hero.badge': 'v1.7 · Windows .exe · Estável',
-      'hero.tagline': '<strong>Sistema Solar em escala real</strong> — aplicativo desktop nativo em Electron com renderização via <strong>WebGL 2.0 / Vulkan</strong>. Órbitas reais de planetas, luas e cometas, o disco de acreção de Sgr A* e sondas interestelares — tudo em um único <strong>.exe</strong>, sem navegador e sem internet.',
+      'hero.tagline': '<strong>Sistema Solar em escala real</strong> — aplicativo desktop nativo em Electron com renderização via <strong>WebGL 2.0 / Vulkan</strong>. Órbitas reais de planetas, luas e cometas, o disco de acreção de Sgr A* e galáxias — tudo em um único <strong>.exe</strong>, sem navegador e sem internet.',
       'hero.download': 'Baixar para Windows (.exe)',
       'hero.roadmap': 'Ver roadmap',
       'hero.pill.offline': 'Offline',
@@ -1464,12 +1029,12 @@
       'feat.3.desc': 'Traçado de raios na métrica de Schwarzschild: anel de fótons, disco de acreção e lente gravitacional.',
       'feat.4.title': 'Cometas e cinturões',
       'feat.4.desc': 'Halley, Encke, Churyumov–Gerasimenko, Hale–Bopp. Mais o cinturão de asteroides e o cinturão de Kuiper com milhares de objetos.',
-      'feat.5.title': 'Sondas espaciais',
-      'feat.5.desc': 'Voyager 1, New Horizons e Hubble com trajetórias reais e órbitas baseadas em TLE.',
+      'feat.5.title': 'Sedna e TNOS',
+      'feat.5.desc': 'Órbita real de Sedna com periélio em 2076 e outros objetos transnetunianos — em escala real.',
       'feat.6.title': 'Galáxias',
       'feat.6.desc': 'A Via Láctea com braços espirais e barra, a galáxia de Andrômeda e seus satélites M32 e M110.',
-      'feat.7.title': 'Controle do tempo',
-      'feat.7.desc': 'De ×1 (tempo real) a 10 anos por segundo. Reverso, pausa, salto para qualquer data.',
+      'feat.7.title': 'Auroras',
+      'feat.7.desc': 'Ovais magnéticos da Terra, Júpiter, Saturno, Urano e Netuno com inclinação correta do eixo magnético.',
       'feat.8.title': 'Texturas procedurais',
       'feat.8.desc': 'Atmosferas, anéis, terreno e campos estelares são gerados dentro do app — mínimo de assets externos.',
 
@@ -1527,12 +1092,12 @@
       'ver.stable.f4': 'Buraco negro Sgr A* com traçado de raios',
       'ver.stable.f5': 'Via Láctea, Andrômeda, M32 e M110',
       'ver.stable.f6': 'Atmosferas, auroras, terreno e nuvens',
-      'ver.stable.f7': 'Controle do tempo de ×1 a 10 anos/s',
+      'ver.stable.f7': 'Sedna, Olimpo em Marte, terreno realista',
       'ver.stable.cta': 'Baixar .exe v1.7 →',
       'ver.dev.tag': '🔒 Dev · Build privada',
       'ver.dev.sub': 'Em desenvolvimento · não pública',
       'ver.dev.platform': 'build privada',
-      'ver.dev.f1': 'Controle total do tempo — todos os modos e transições',
+      'ver.dev.f1': 'Controle total do tempo — de ×1 a 10 anos por segundo, todos os modos e transições',
       'ver.dev.f2': '3 novas sondas: Hubble, Voyager 1, New Horizons — com histórico real da missão com precisão de minutos',
       'ver.dev.f3': 'Atmosferas atualizadas — nova física (espalhamento Rayleigh e Mie em um único raio)',
       'ver.dev.f4': 'Correções de bugs e otimizações de renderização',
@@ -1542,11 +1107,11 @@
       'rm.sub': 'Planos de desenvolvimento — da build estável atual a sistemas estelares totalmente procedurais. Ainda em um único .exe.',
       'rm.done.tag': 'Lançado',
       'rm.done.title': 'v1.7 — Versão estável',
-      'rm.done.text': 'Um Sistema Solar completo: planetas, planetas anões, luas, cometas, cinturões de asteroides e Kuiper, o buraco negro Sgr A*, as galáxias Via Láctea e Andrômeda, sondas espaciais e controle do tempo.',
+      'rm.done.text': 'Um Sistema Solar completo: planetas, planetas anões, luas, cometas, cinturões de asteroides e Kuiper, o buraco negro Sgr A*, as galáxias Via Láctea e Andrômeda, auroras e terreno realista.',
       'rm.cur.tag': 'Em desenvolvimento · privado',
       'rm.cur.title': 'v1.7.1 — Build dev privada',
       'rm.cur.text': 'Branch fechado com melhorias importantes em três direções. A build ainda não está disponível para download.',
-      'rm.cur.li1': '<strong>Controle total do tempo</strong> — todos os modos e transições em um só lugar',
+      'rm.cur.li1': '<strong>Controle total do tempo</strong> — de ×1 a 10 anos por segundo, reverso, pausa e salto para qualquer data',
       'rm.cur.li2': '<strong>3 novas sondas</strong> — Hubble, Voyager 1 e New Horizons com histórico real da missão com precisão de minutos',
       'rm.cur.li3': '<strong>Atmosferas atualizadas</strong> — nova física: espalhamento Rayleigh e Mie em um único raio, borda brilhante fina na superfície e transição suave para preto acima',
       'rm.next.tag': 'Próximo',
@@ -1568,7 +1133,7 @@
       'nav.versions': 'Versiones',
       'nav.roadmap': 'Roadmap',
       'hero.badge': 'v1.7 · Windows .exe · Estable',
-      'hero.tagline': '<strong>Sistema Solar a escala real</strong> — aplicación de escritorio nativa en Electron con renderizado mediante <strong>WebGL 2.0 / Vulkan</strong>. Órbitas reales de planetas, lunas y cometas, el disco de acreción de Sgr A* y sondas interestelares — todo en un único <strong>.exe</strong>, sin navegador y sin internet.',
+      'hero.tagline': '<strong>Sistema Solar a escala real</strong> — aplicación de escritorio nativa en Electron con renderizado mediante <strong>WebGL 2.0 / Vulkan</strong>. Órbitas reales de planetas, lunas y cometas, el disco de acreción de Sgr A* y galaxias — todo en un único <strong>.exe</strong>, sin navegador y sin internet.',
       'hero.download': 'Descargar para Windows (.exe)',
       'hero.roadmap': 'Ver hoja de ruta',
       'hero.pill.offline': 'Sin conexión',
@@ -1584,12 +1149,12 @@
       'feat.3.desc': 'Trazado de rayos en la métrica de Schwarzschild: anillo de fotones, disco de acreción y lente gravitacional.',
       'feat.4.title': 'Cometas y cinturones',
       'feat.4.desc': 'Halley, Encke, Churyumov–Gerasimenko, Hale–Bopp. Más el cinturón de asteroides y el cinturón de Kuiper con miles de objetos.',
-      'feat.5.title': 'Sondas espaciales',
-      'feat.5.desc': 'Voyager 1, New Horizons y Hubble con trayectorias reales y órbitas basadas en TLE.',
+      'feat.5.title': 'Sedna y TNOs',
+      'feat.5.desc': 'Órbita real de Sedna con perihelio en 2076 y otros objetos transneptunianos — a escala real.',
       'feat.6.title': 'Galaxias',
       'feat.6.desc': 'La Vía Láctea con brazos espirales y barra, la galaxia de Andrómeda y sus satélites M32 y M110.',
-      'feat.7.title': 'Control del tiempo',
-      'feat.7.desc': 'Desde ×1 (tiempo real) hasta 10 años por segundo. Marcha atrás, pausa, salto a cualquier fecha.',
+      'feat.7.title': 'Auroras',
+      'feat.7.desc': 'Óvalos magnéticos de la Tierra, Júpiter, Saturno, Urano y Neptuno con inclinación correcta del eje magnético.',
       'feat.8.title': 'Texturas procedurales',
       'feat.8.desc': 'Atmósferas, anillos, terreno y campos estelares se generan dentro de la app — mínimo de recursos externos.',
 
@@ -1647,12 +1212,12 @@
       'ver.stable.f4': 'Agujero negro Sgr A* con trazado de rayos',
       'ver.stable.f5': 'Vía Láctea, Andrómeda, M32 y M110',
       'ver.stable.f6': 'Atmósferas, auroras, terreno y nubes',
-      'ver.stable.f7': 'Control del tiempo de ×1 a 10 años/s',
+      'ver.stable.f7': 'Sedna, Olimpo en Marte, terreno realista',
       'ver.stable.cta': 'Descargar .exe v1.7 →',
       'ver.dev.tag': '🔒 Dev · Build privada',
       'ver.dev.sub': 'En desarrollo · no pública',
       'ver.dev.platform': 'build privada',
-      'ver.dev.f1': 'Control total del tiempo — todos los modos y transiciones',
+      'ver.dev.f1': 'Control total del tiempo — de ×1 a 10 años por segundo, todos los modos y transiciones',
       'ver.dev.f2': '3 nuevas sondas: Hubble, Voyager 1, New Horizons — con historial real de la misión con precisión de minutos',
       'ver.dev.f3': 'Atmósferas actualizadas — nueva física (dispersión Rayleigh y Mie en un solo rayo)',
       'ver.dev.f4': 'Corrección de errores y optimización del renderizado',
@@ -1662,11 +1227,11 @@
       'rm.sub': 'Planes de desarrollo — desde la build estable actual hasta sistemas estelares totalmente procedurales. Sigue siendo un solo .exe.',
       'rm.done.tag': 'Lanzado',
       'rm.done.title': 'v1.7 — Versión estable',
-      'rm.done.text': 'Un Sistema Solar completo: planetas, planetas enanos, lunas, cometas, cinturones de asteroides y Kuiper, el agujero negro Sgr A*, las galaxias Vía Láctea y Andrómeda, sondas espaciales y control del tiempo.',
+      'rm.done.text': 'Un Sistema Solar completo: planetas, planetas enanos, lunas, cometas, cinturones de asteroides y Kuiper, el agujero negro Sgr A*, las galaxias Vía Láctea y Andrómeda, auroras y terreno realista.',
       'rm.cur.tag': 'En desarrollo · privado',
       'rm.cur.title': 'v1.7.1 — Build dev privada',
       'rm.cur.text': 'Rama cerrada con mejoras importantes en tres direcciones. La build aún no está disponible para descargar.',
-      'rm.cur.li1': '<strong>Control total del tiempo</strong> — todos los modos y transiciones en un solo lugar',
+      'rm.cur.li1': '<strong>Control total del tiempo</strong> — de ×1 a 10 años por segundo, marcha atrás, pausa y salto a cualquier fecha',
       'rm.cur.li2': '<strong>3 nuevas sondas</strong> — Hubble, Voyager 1 y New Horizons con historial real de la misión con precisión de minutos',
       'rm.cur.li3': '<strong>Atmósferas actualizadas</strong> — nueva física: dispersión Rayleigh y Mie en un solo rayo, un borde brillante fino en la superficie y una transición suave a negro por encima',
       'rm.next.tag': 'Siguiente',
@@ -1688,7 +1253,7 @@
       'nav.versions': 'Versions',
       'nav.roadmap': 'Feuille de route',
       'hero.badge': 'v1.7 · Windows .exe · Stable',
-      'hero.tagline': '<strong>Système Solaire à l\'échelle réelle</strong> — application de bureau native sur Electron avec rendu via <strong>WebGL 2.0 / Vulkan</strong>. Orbites réelles des planètes, lunes et comètes, le disque d\'accrétion de Sgr A* et des sondes interstellaires — le tout dans un seul <strong>.exe</strong>, sans navigateur et sans internet.',
+      'hero.tagline': '<strong>Système Solaire à l\'échelle réelle</strong> — application de bureau native sur Electron avec rendu via <strong>WebGL 2.0 / Vulkan</strong>. Orbites réelles des planètes, lunes et comètes, le disque d\'accrétion de Sgr A* et les galaxies — le tout dans un seul <strong>.exe</strong>, sans navigateur et sans internet.',
       'hero.download': 'Télécharger pour Windows (.exe)',
       'hero.roadmap': 'Voir la feuille de route',
       'hero.pill.offline': 'Hors ligne',
@@ -1704,12 +1269,12 @@
       'feat.3.desc': 'Lancer de rayons dans la métrique de Schwarzschild : anneau de photons, disque d\'accrétion et lentille gravitationnelle.',
       'feat.4.title': 'Comètes et ceintures',
       'feat.4.desc': 'Halley, Encke, Churyumov–Gerasimenko, Hale–Bopp. Plus la ceinture d\'astéroïdes et la ceinture de Kuiper avec des milliers d\'objets.',
-      'feat.5.title': 'Sondes spatiales',
-      'feat.5.desc': 'Voyager 1, New Horizons et Hubble avec trajectoires réelles et orbites basées sur TLE.',
+      'feat.5.title': 'Sedna et TNO',
+      'feat.5.desc': 'Orbite réelle de Sedna avec périhélie en 2076 et autres objets transneptuniens — à l\'échelle réelle.',
       'feat.6.title': 'Galaxies',
       'feat.6.desc': 'La Voie lactée avec ses bras spiraux et sa barre, la galaxie d\'Andromède et ses satellites M32 et M110.',
-      'feat.7.title': 'Contrôle du temps',
-      'feat.7.desc': 'De ×1 (temps réel) à 10 ans par seconde. Marche arrière, pause, saut à n\'importe quelle date.',
+      'feat.7.title': 'Aurores',
+      'feat.7.desc': 'Ovales magnétiques de la Terre, Jupiter, Saturne, Uranus et Neptune avec inclinaison correcte de l\'axe magnétique.',
       'feat.8.title': 'Textures procédurales',
       'feat.8.desc': 'Atmosphères, anneaux, terrain et champs stellaires sont générés dans l\'application — minimum d\'assets externes.',
 
@@ -1767,12 +1332,12 @@
       'ver.stable.f4': 'Trou noir Sgr A* avec lancer de rayons',
       'ver.stable.f5': 'Voie lactée, Andromède, M32 et M110',
       'ver.stable.f6': 'Atmosphères, aurores, terrain et nuages',
-      'ver.stable.f7': 'Contrôle du temps de ×1 à 10 ans/s',
+      'ver.stable.f7': 'Sedna, Olympe sur Mars, terrain réaliste',
       'ver.stable.cta': 'Télécharger .exe v1.7 →',
       'ver.dev.tag': '🔒 Dev · Build privée',
       'ver.dev.sub': 'En développement · non publique',
       'ver.dev.platform': 'build privée',
-      'ver.dev.f1': 'Contrôle total du temps — tous les modes et transitions',
+      'ver.dev.f1': 'Contrôle total du temps — de ×1 à 10 ans par seconde, tous les modes et transitions',
       'ver.dev.f2': '3 nouvelles sondes : Hubble, Voyager 1, New Horizons — avec historique réel de la mission à la minute près',
       'ver.dev.f3': 'Atmosphères mises à jour — nouvelle physique (diffusion Rayleigh et Mie en un seul rayon)',
       'ver.dev.f4': 'Corrections de bugs et optimisations du rendu',
@@ -1782,11 +1347,11 @@
       'rm.sub': 'Plans de développement — de la build stable actuelle à des systèmes stellaires entièrement procéduraux. Toujours dans un seul .exe.',
       'rm.done.tag': 'Publié',
       'rm.done.title': 'v1.7 — Version stable',
-      'rm.done.text': 'Un Système Solaire complet : planètes, planètes naines, lunes, comètes, ceintures d\'astéroïdes et de Kuiper, le trou noir Sgr A*, les galaxies Voie lactée et Andromède, les sondes spatiales et le contrôle du temps.',
+      'rm.done.text': 'Un Système Solaire complet : planètes, planètes naines, lunes, comètes, ceintures d\'astéroïdes et de Kuiper, le trou noir Sgr A*, les galaxies Voie lactée et Andromède, aurores et terrain réaliste.',
       'rm.cur.tag': 'En développement · privé',
       'rm.cur.title': 'v1.7.1 — Build dev privée',
       'rm.cur.text': 'Branche fermée avec d\'importantes améliorations dans trois directions. La build n\'est pas encore disponible au téléchargement.',
-      'rm.cur.li1': '<strong>Contrôle total du temps</strong> — tous les modes et transitions au même endroit',
+      'rm.cur.li1': '<strong>Contrôle total du temps</strong> — de ×1 à 10 ans par seconde, marche arrière, pause et saut à n\'importe quelle date',
       'rm.cur.li2': '<strong>3 nouvelles sondes</strong> — Hubble, Voyager 1 et New Horizons avec historique réel de la mission à la minute près',
       'rm.cur.li3': '<strong>Atmosphères mises à jour</strong> — nouvelle physique : diffusion Rayleigh et Mie en un seul rayon, une fine bordure lumineuse à la surface et une transition douce vers le noir au-dessus',
       'rm.next.tag': 'Suivant',
@@ -1822,7 +1387,6 @@
   function applyLang(lang) {
     const t = I18N[lang] || I18N.en;
     document.documentElement.lang = lang;
-
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (t[key] !== undefined) el.textContent = t[key];
@@ -1831,11 +1395,8 @@
       const key = el.getAttribute('data-i18n-html');
       if (t[key] !== undefined) el.innerHTML = t[key];
     });
-
     if (t['title']) document.title = t['title'];
-
     try { localStorage.setItem('pl_lang', lang); } catch (e) {}
-
     const sel = document.getElementById('langSelect');
     if (sel) sel.value = lang;
   }
