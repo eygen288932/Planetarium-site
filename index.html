@@ -468,4 +468,1296 @@
     align-items: center;
     justify-content: center;
     z-index: 2;
-    box-shadow: 
+    box-shadow: 0 0 0 4px var(--bg);
+    letter-spacing: 0.03em;
+  }
+  .history-item.latest .history-marker {
+    background: rgba(94, 224, 160, 0.12);
+    border-color: var(--green);
+    color: var(--green);
+  }
+  .history-item.current .history-marker {
+    background: rgba(255, 210, 74, 0.1);
+    border-color: var(--yellow);
+    color: var(--yellow);
+    animation: markerPulse 2s ease-in-out infinite;
+  }
+  @keyframes markerPulse {
+    0%, 100% { box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px rgba(255, 210, 74, 0.2); }
+    50%      { box-shadow: 0 0 0 4px var(--bg), 0 0 0 12px rgba(255, 210, 74, 0); }
+  }
+  .history-date {
+    font-size: 12px;
+    color: var(--dim);
+    opacity: 0.75;
+    margin-bottom: 4px;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+  }
+  .history-item.latest .history-date { color: var(--green); opacity: 1; }
+  .history-item.current .history-date { color: var(--yellow); opacity: 1; }
+  .history-body h3 { margin: 0 0 8px; font-size: 17px; font-weight: 600; color: var(--fg); }
+  .history-body p { margin: 0 0 8px; color: var(--dim); font-size: 14px; line-height: 1.65; max-width: 860px; }
+  .history-body p:last-child { margin-bottom: 0; }
+  .history-body p strong { color: var(--fg); font-weight: 500; }
+  .history-body ul { margin: 6px 0 8px; padding-left: 20px; color: var(--dim); font-size: 14px; line-height: 1.6; max-width: 860px; }
+  .history-body ul li { padding: 2px 0; }
+  .history-body ul li::marker { color: var(--accent); }
+  .history-body ul li strong { color: var(--fg); font-weight: 500; }
+
+  .roadmap { position: relative; margin-top: 40px; padding-left: 40px; }
+  .roadmap::before {
+    content: ''; position: absolute; top: 8px; bottom: 8px; left: 14px; width: 2px;
+    background: linear-gradient(180deg, var(--green) 0%, var(--yellow) 30%, var(--accent) 60%, var(--purple) 100%);
+    border-radius: 2px; opacity: 0.6;
+  }
+  .roadmap-item { position: relative; padding: 0 0 40px 30px; }
+  .roadmap-item:last-child { padding-bottom: 0; }
+  .roadmap-marker {
+    position: absolute; left: -40px; top: 2px;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: var(--bg-2); border: 2px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 700; z-index: 2;
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+  .roadmap-item.done .roadmap-marker { border-color: var(--green); background: rgba(94, 224, 160, 0.1); color: var(--green); }
+  .roadmap-item.current .roadmap-marker {
+    border-color: var(--yellow); background: rgba(255, 210, 74, 0.1); color: var(--yellow);
+    animation: markerPulse 2s ease-in-out infinite;
+  }
+  .roadmap-item.next .roadmap-marker { border-color: var(--accent); background: rgba(127, 180, 255, 0.1); color: var(--accent); }
+  .roadmap-item.future .roadmap-marker { border-color: var(--purple); background: rgba(178, 141, 255, 0.1); color: var(--purple); }
+  .roadmap-tag {
+    display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 5px; margin-bottom: 10px;
+  }
+  .roadmap-item.done .roadmap-tag    { background: rgba(94, 224, 160, 0.12); color: var(--green); }
+  .roadmap-item.current .roadmap-tag { background: rgba(255, 210, 74, 0.12); color: var(--yellow); }
+  .roadmap-item.next .roadmap-tag    { background: rgba(127, 180, 255, 0.12); color: var(--accent); }
+  .roadmap-item.future .roadmap-tag  { background: rgba(178, 141, 255, 0.12); color: var(--purple); }
+  .roadmap-item h3 { margin: 0 0 8px; font-size: 20px; font-weight: 600; color: var(--fg); }
+  .roadmap-item p { margin: 0; color: var(--dim); font-size: 15px; line-height: 1.6; max-width: 720px; }
+  .roadmap-item p strong { color: var(--fg); }
+  .roadmap-item ul { margin: 10px 0 0; padding-left: 20px; color: var(--dim); font-size: 15px; line-height: 1.6; }
+  .roadmap-item ul li { padding: 3px 0; }
+  .roadmap-item ul li::marker { color: var(--yellow); }
+
+  footer {
+    border-top: 1px solid var(--border); margin-top: 40px; padding: 40px 32px;
+    max-width: 1280px; margin-left: auto; margin-right: auto;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;
+    font-size: 13px; color: var(--dim);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  footer a.footer-trailer {
+    color: #ff8a8a;
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  footer a.footer-trailer:hover { color: var(--youtube); }
+  footer a.footer-trailer svg { width: 13px; height: 13px; }
+
+  @media (max-width: 1100px) { header nav { gap: 12px; font-size: 12px; } .header-right { gap: 12px; } }
+  @media (max-width: 900px) {
+    header { padding: 12px 20px; }
+    header nav { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 40px 20px 60px; gap: 40px; text-align: center; }
+    .hero-content { margin: 0 auto; }
+    .cta-row, .hero-meta { justify-content: center; }
+    .orbit-visual { max-width: 340px; }
+    .orbit-4 { width: 320px; height: 320px; }
+    .orbit-3 { width: 240px; height: 240px; }
+    .orbit-2 { width: 160px; height: 160px; }
+    .orbit-1 { width: 100px; height: 100px; }
+    .section, .trailer-section { padding: 60px 20px; }
+    .versions-grid { grid-template-columns: 1fr; }
+    .version-card { padding: 24px; }
+    .version-num { font-size: 36px; }
+    .roadmap { padding-left: 30px; }
+    .roadmap::before { left: 10px; }
+    .roadmap-marker { left: -30px; width: 26px; height: 26px; font-size: 12px; }
+    .roadmap-item { padding-left: 24px; }
+    .history { padding-left: 60px; }
+    .history::before { left: 18px; }
+    .history-marker { left: -60px; width: 46px; height: 22px; font-size: 10px; }
+    footer { padding: 30px 20px; }
+    .trailer-play { width: 64px; height: 64px; }
+    .trailer-play svg { width: 26px; height: 26px; }
+    .trailer-info h3 { font-size: 16px; }
+    .trailer-info .sub { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="stars"></canvas>
+<div class="nebula"></div>
+<div class="vignette"></div>
+
+<header>
+  <div class="logo">
+    <span class="logo-dot"></span>
+    PLANETARIUM
+  </div>
+  <div class="header-right">
+    <nav>
+      <a href="#features" data-i18n="nav.features">Возможности</a>
+      <a href="#trailer" data-i18n="nav.trailer">Трейлер</a>
+      <a href="#requirements" data-i18n="nav.req">Требования</a>
+      <a href="#versions" data-i18n="nav.versions">Версии</a>
+      <a href="#history" data-i18n="nav.history">История</a>
+      <a href="#roadmap" data-i18n="nav.roadmap">Roadmap</a>
+      <a href="https://eygen.itch.io/planetarium" target="_blank" rel="noopener">itch.io</a>
+    </nav>
+    <select id="langSelect" class="lang-select" aria-label="Language">
+      <option value="ru">🇷🇺 Русский</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="pt">🇵🇹 Português</option>
+    </select>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="version-badge" data-i18n="hero.badge">v1.7.1 · Windows .exe · Стабильная</div>
+      <h1>
+        Planetarium
+        <span>1 : 1</span>
+      </h1>
+      <p class="tagline" data-i18n-html="hero.tagline"><strong>Солнечная система в реальном масштабе</strong> — нативное десктопное приложение на Electron с рендером через <strong>WebGL 2.0 / Vulkan</strong>. Реальные орбиты, чёрная дыра Sgr A*, галактики — и теперь полноценная KSP-физика внутри — в одном <strong>.exe</strong>, без браузера и без интернета.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://eygen.itch.io/planetarium" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3 5.5L10.5 4.5V11.5H3V5.5ZM11.5 4.3L21 3V11.5H11.5V4.3ZM3 12.5H10.5V19.5L3 18.5V12.5ZM11.5 12.5H21V21L11.5 19.7V12.5Z"/>
+          </svg>
+          <span data-i18n="hero.download">Скачать для Windows (.exe)</span>
+        </a>
+        <a class="btn btn-youtube" href="https://www.youtube.com/watch?v=pcclsGNm43Y" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M23.5 6.2c-.3-1.1-1.1-1.9-2.2-2.2C19.3 3.5 12 3.5 12 3.5s-7.3 0-9.3.5C1.6 4.3.8 5.1.5 6.2.0 8.2.0 12 .0 12s0 3.8.5 5.8c.3 1.1 1.1 1.9 2.2 2.2 2 .5 9.3.5 9.3.5s7.3 0 9.3-.5c1.1-.3 1.9-1.1 2.2-2.2.5-2 .5-5.8.5-5.8s0-3.8-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/>
+          </svg>
+          <span data-i18n="hero.trailer">Смотреть трейлер</span>
+        </a>
+      </div>
+      <div class="trailer-note">
+        <span class="badge" data-i18n="hero.trailer.badge">v1.6</span>
+        <span data-i18n="hero.trailer.note">трейлер записан на версии 1.6 · YouTube</span>
+      </div>
+      <div class="hero-meta">
+        <span class="pill windows">🪟 <strong>Windows .exe</strong></span>
+        <span class="pill vulkan">⚡ <strong>WebGL 2.0 / Vulkan</strong></span>
+        <span class="pill">📦 <strong>Electron</strong> · standalone</span>
+        <span class="pill">📴 <strong data-i18n="hero.pill.offline">Офлайн</strong> · <span data-i18n="hero.pill.after">после скачивания</span></span>
+      </div>
+    </div>
+
+    <div class="orbit-visual">
+      <div class="sun-center"></div>
+      <div class="orbit orbit-1"><div class="planet p-mercury"></div></div>
+      <div class="orbit orbit-2"><div class="planet p-earth"></div></div>
+      <div class="orbit orbit-3"><div class="planet p-jupiter"></div></div>
+      <div class="orbit orbit-4"><div class="planet p-saturn"></div></div>
+    </div>
+  </section>
+
+  <section class="trailer-section" id="trailer">
+    <h2 class="section-title" data-i18n="trailer.title">Трейлер</h2>
+    <p class="section-sub" data-i18n="trailer.sub">Официальный игровой трейлер Planetarium. Записан на версии 1.6 — с тех пор игра получила много обновлений, но дух остался тем же.</p>
+    <a class="trailer-card trailer-link" href="https://www.youtube.com/watch?v=pcclsGNm43Y" target="_blank" rel="noopener">
+      <div class="trailer-play" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <div class="trailer-info">
+        <div>
+          <h3 data-i18n="trailer.card.title">Космическая сосиска — game trailer</h3>
+          <p class="sub" data-i18n="trailer.card.sub">YouTube · нажми, чтобы открыть</p>
+        </div>
+        <span class="version">v1.6</span>
+      </div>
+    </a>
+  </section>
+
+  <section class="section" id="features">
+    <h2 class="section-title" data-i18n="feat.title">Что внутри</h2>
+    <p class="section-sub" data-i18n="feat.sub">Полноценный симулятор космоса с KSP-физикой внутри — упакованный в один .exe. Реальные эфемериды, масштаб 1:1 и нативная графика на Electron + WebGL 2.0 (Vulkan).</p>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🪐</div>
+        <h3 data-i18n="feat.1.title">Реальные орбиты</h3>
+        <p data-i18n="feat.1.desc">Кеплеровские элементы JPL для планет, карликовых планет, комет и Седны. Позиции пересчитываются в реальном времени с точностью до секунды.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🚀</div>
+        <h3 data-i18n="feat.2.title">KSP-физика</h3>
+        <p data-i18n="feat.2.desc">N-body гравитация, конические сечения, сферы влияния планет, navball, альтиметр и аэродинамика атмосферы — полноценный орбитальный симулятор.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🕳️</div>
+        <h3 data-i18n="feat.3.title">Sgr A* — чёрная дыра</h3>
+        <p data-i18n="feat.3.desc">Трассировка лучей в метрике Шварцшильда: фотонное кольцо, аккреционный диск и гравитационное линзирование.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">☄️</div>
+        <h3 data-i18n="feat.4.title">Кометы и пояса</h3>
+        <p data-i18n="feat.4.desc">Галлея, Энке, Чурюмова-Герасименко, Хейла-Боппа. Плюс пояс астероидов и пояс Койпера с тысячами объектов.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🛰️</div>
+        <h3 data-i18n="feat.5.title">Космические аппараты</h3>
+        <p data-i18n="feat.5.desc">Хаббл, Вояджер-1 и Новые горизонты с реальной историей полёта — пролёты Юпитера, Сатурна, Плутона — с точностью до минут.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🌌</div>
+        <h3 data-i18n="feat.6.title">Галактики</h3>
+        <p data-i18n="feat.6.desc">Млечный Путь со спиральными рукавами и перемычкой, Туманность Андромеды и её спутники M32 и M110.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">✨</div>
+        <h3 data-i18n="feat.7.title">Полярные сияния</h3>
+        <p data-i18n="feat.7.desc">Магнитные овалы Земли, Юпитера, Сатурна, Урана и Нептуна с корректным наклоном магнитной оси.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⏱️</div>
+        <h3 data-i18n="feat.8.title">Управление временем</h3>
+        <p data-i18n="feat.8.desc">Полное управление временем: от ×1 (реальное) до 10 лет в секунду, обратный ход, пауза, переход на любую дату.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="requirements">
+    <h2 class="section-title" data-i18n="req.title">Системные требования</h2>
+    <p class="section-sub" data-i18n="req.sub">Приложение лёгкое: подойдёт даже офисный ПК или старый ноутбук со встроенной графикой. Нужна поддержка WebGL 2.0 (входит в DirectX 11) или Vulkan — приложение использует аппаратное ускорение через Chromium.</p>
+
+    <div class="req-grid">
+      <div class="req-card min">
+        <h4><span data-i18n="req.min">Минимальные</span> <span class="level">30 FPS</span></h4>
+        <ul>
+          <li><span data-i18n="req.row.os">ОС</span><strong data-i18n="req.min.os">Windows 10 (64-bit)</strong></li>
+          <li><span data-i18n="req.row.cpu">Процессор</span><strong data-i18n-html="req.min.cpu">Intel Core i3-3220<br>/ AMD Athlon X4 740</strong></li>
+          <li><span data-i18n="req.row.ram">ОЗУ</span><strong data-i18n="req.min.ram">4 GB</strong></li>
+          <li><span data-i18n="req.row.gpu">Видеокарта</span><strong data-i18n-html="req.min.gpu">Intel HD 4000 / Radeon R5<br>или дискретная 1 GB</strong></li>
+          <li><span data-i18n="req.row.api">API</span><strong data-i18n="req.min.api">DirectX 11 / WebGL 2.0</strong></li>
+          <li><span data-i18n="req.row.disk">Место на диске</span><strong data-i18n="req.min.disk">~300 MB</strong></li>
+        </ul>
+      </div>
+      <div class="req-card rec">
+        <h4><span data-i18n="req.rec">Рекомендуемые</span> <span class="level">60 FPS</span></h4>
+        <ul>
+          <li><span data-i18n="req.row.os">ОС</span><strong data-i18n="req.rec.os">Windows 10 / 11 (64-bit)</strong></li>
+          <li><span data-i18n="req.row.cpu">Процессор</span><strong data-i18n-html="req.rec.cpu">Intel Core i5-6500<br>/ AMD Ryzen 3 1200</strong></li>
+          <li><span data-i18n="req.row.ram">ОЗУ</span><strong data-i18n="req.rec.ram">8 GB</strong></li>
+          <li><span data-i18n="req.row.gpu">Видеокарта</span><strong data-i18n-html="req.rec.gpu">GTX 750 Ti / RX 550<br>или UHD 630 / Vega 8</strong></li>
+          <li><span data-i18n="req.row.api">API</span><strong data-i18n="req.rec.api">DirectX 11 / Vulkan</strong></li>
+          <li><span data-i18n="req.row.disk">Место на диске</span><strong data-i18n="req.rec.disk">~400 MB</strong></li>
+        </ul>
+      </div>
+      <div class="req-card max">
+        <h4><span data-i18n="req.max">Максимальные</span> <span class="level">60+ FPS</span></h4>
+        <ul>
+          <li><span data-i18n="req.row.os">ОС</span><strong data-i18n="req.max.os">Windows 11 (64-bit)</strong></li>
+          <li><span data-i18n="req.row.cpu">Процессор</span><strong data-i18n-html="req.max.cpu">Intel Core i5-10400F<br>/ AMD Ryzen 5 3600</strong></li>
+          <li><span data-i18n="req.row.ram">ОЗУ</span><strong data-i18n="req.max.ram">16 GB</strong></li>
+          <li><span data-i18n="req.row.gpu">Видеокарта</span><strong data-i18n-html="req.max.gpu">GTX 1060 (6 GB)<br>/ RX 580 (8 GB)</strong></li>
+          <li><span data-i18n="req.row.api">API</span><strong data-i18n="req.max.api">Vulkan / DirectX 11</strong></li>
+          <li><span data-i18n="req.row.storage">Накопитель</span><strong data-i18n="req.max.storage">SSD · ~500 MB</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="req-note">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M3 5.5L10.5 4.5V11.5H3V5.5ZM11.5 4.3L21 3V11.5H11.5V4.3ZM3 12.5H10.5V19.5L3 18.5V12.5ZM11.5 12.5H21V21L11.5 19.7V12.5Z"/>
+      </svg>
+      <div data-i18n-html="req.note"><strong style="color:var(--fg)">Только Windows.</strong> .exe распространяется через itch.io. Linux и macOS-сборок пока нет. Нужна поддержка WebGL 2.0 (DirectX 11) или Vulkan — на GPU без этих API приложение не запустится. В «максимальной» конфигурации приложение ставится на SSD: быстрее загрузка текстур и сцен.</div>
+    </div>
+  </section>
+
+  <section class="section" id="versions">
+    <h2 class="section-title" data-i18n="ver.title">Версии</h2>
+    <p class="section-sub" data-i18n="ver.sub">Сейчас доступна сборка v1.7.1 — она стала публичной совсем недавно. Ветка v1.8 находится в закрытой разработке.</p>
+
+    <div class="versions-grid">
+      <div class="version-card stable">
+        <div class="version-tag stable" data-i18n="ver.stable.tag">● Стабильная · Доступна</div>
+        <div class="version-num">v1.7.1</div>
+        <p class="version-subtitle" data-i18n="ver.stable.sub">Текущий публичный релиз</p>
+        <div class="version-platform">🪟 Windows .exe · Electron + WebGL 2.0</div>
+        <ul class="version-features">
+          <li data-i18n="ver.stable.f1">Полное управление временем — от ×1 до 10 лет в секунду</li>
+          <li data-i18n="ver.stable.f2">KSP-режим: N-body гравитация, конические сечения, сферы влияния, navball, альтиметр, аэродинамика</li>
+          <li data-i18n="ver.stable.f3">3 аппарата — Хаббл, Вояджер-1, Новые горизонты — с реальной историей до минут</li>
+          <li data-i18n="ver.stable.f4">Обновлённые атмосферы — новая физика рассеяния</li>
+          <li data-i18n="ver.stable.f5">Оптимизированные 16K текстуры облаков и поверхности Земли</li>
+          <li data-i18n="ver.stable.f6">Больше музыки — включая Ханса Циммера из «Интерстеллара»</li>
+        </ul>
+        <div class="version-actions">
+          <a class="version-cta primary" href="https://eygen.itch.io/planetarium" target="_blank" rel="noopener" data-i18n="ver.stable.cta">Скачать .exe v1.7.1 →</a>
+          <a class="version-cta trailer" href="https://www.youtube.com/watch?v=pcclsGNm43Y" target="_blank" rel="noopener" data-i18n="ver.stable.trailer">🎬 Трейлер</a>
+        </div>
+      </div>
+
+      <div class="version-card dev">
+        <div class="version-tag dev" data-i18n="ver.dev.tag">🔒 Dev · В разработке</div>
+        <div class="version-num">v1.8</div>
+        <p class="version-subtitle" data-i18n="ver.dev.sub">Следующая ветка · не анонсирована публично</p>
+        <div class="version-platform">🪟 Windows .exe · <span data-i18n="ver.dev.platform">приватный билд</span></div>
+        <ul class="version-features">
+          <li data-i18n="ver.dev.f1">Улучшенная стабильность KSP-режима и исправление баганного navball</li>
+          <li data-i18n="ver.dev.f2">Больше музыки из игр и фильмов (включая KSP и Interstellar)</li>
+          <li data-i18n="ver.dev.f3">TRAPPIST-1 и другие экзосистемы — благодаря динамическому смещению координат</li>
+          <li data-i18n="ver.dev.f4">Процедурные планеты, звёзды и газовые гиганты</li>
+        </ul>
+        <span class="version-cta locked" data-i18n="ver.dev.cta">🔒 Пока недоступна</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="history">
+    <h2 class="section-title" data-i18n="hist.title">История версий</h2>
+    <p class="section-sub" data-i18n="hist.sub">Подробные описания каждого обновления — как они публиковались в Discord.</p>
+
+    <div class="history">
+
+      <div class="history-item">
+        <div class="history-marker">1.1</div>
+        <div class="history-body">
+          <div class="history-date" data-i18n="hist.11.date">6 ноя 2026 · 00:09</div>
+          <h3 data-i18n="hist.11.title">Первый релиз</h3>
+          <p data-i18n="hist.11.desc1">«ВНИМАНИЕ: вышла игра в релиз! 8 планет — некоторые без текстур, а точнее многие, просто потому что я делал этот проект в спешке. Скоро будет больше.»</p>
+          <p data-i18n="hist.11.desc2">Что уже было в первом релизе: астероидный пояс с 4 000 астероидов, пояс Койпера с 7 000 астероидов — на них можно смотреть вблизи. Короче, играйте.</p>
+        </div>
+      </div>
+
+      <div class="history-item">
+        <div class="history-marker">1.2</div>
+        <div class="history-body">
+          <div class="history-date" data-i18n="hist.12.date">6 ноя 2026 · 00:27</div>
+          <h3 data-i18n="hist.12.title">Багфиксы, граница и языки</h3>
+          <p data-i18n="hist.12.desc1">Вышло обновление 1.2:</p>
+          <p data-i18n="hist.12.desc2">1. Исправлен пояс астероидов (спасибо <strong>DougDoug23</strong>). 2. Теперь, если отдалиться слишком далеко (10 000 световых лет), появится сообщение о возвращении назад (автор идеи: <strong>AERO ЧЕЛ</strong>). 3. Добавлена поддержка 2 новых языков.</p>
+        </div>
+      </div>
+
+      <div class="history-item">
+        <div class="history-marker">1.3</div>
+        <div class="history-body">
+          <div class="history-date" data-i18n="hist.13.date">6 ноя 2026 · 04:07</div>
+          <h3 data-i18n="hist.13.title">Поверхность с 500 метров и настоящая атмосфера</h3>
+          <p data-i18n="hist.13.desc1">«ВНИМАНИЕ! ВЫШЛО ОБНОВЛЕНИЕ 1.3. Нововведения: загрузка поверхности начиная с 500 метров (очень сыро, оно плоское, но всё будет сделано). Все баги, которые были в разделе bugs and suggestions, исправлены!»</p>
+          <p data-i18n="hist.13.desc2">«Атмосфера больше не фантастическая и она не плоская! В будущем планирую адаптировать к этому облака. Также добавлено 49 новых звёзд (они без названий, т.к. были жёсткие баги с отображением).»</p>
+        </div>
+      </div>
+
+      <div class="history-item">
+        <div class="history-marker">1.4</div>
+        <div class="history-body">
+          <div class="history-date" data-i18n="hist.14.date">6 ноя 2026 · 12:33</div>
+          <h3 data-i18n="hist.14.title">Фидбэк сообщества</h3>
+          <p data-i18n="hist.14.desc1">«ВЫШЛО ОБНОВЛЕНИЕ 1.4: добавили много того, что вы предлагали (спасибо <strong>AERO ЧЕЛ</strong>). Исправлен баг с террейном.»</p>
+        </div>
+      </div>
+
+      <div class="history-item">
+        <div class="history-marker">1.4.1</div>
+        <div class="history-body">
+          <div class="history-date" data-i18n="hist.141.date">6 ноя 2026 · 12:44</div>
+          <h3 data-i18n="hist.141.title">QoL-обновление</h3>
+          <p data-i18n="hist.141.desc1">«Небольшое QoL-обновление (quality of life) 1.4.1: добавлены настройки вкл-выкл для показа астеройдов, а орбиты и названия перенесены в настройки при нажатии Esc.»</p>
+        </div>
+      </div>
+
+      <div class="history-item">
+        <div class="history-marker">1.5</div>
+        <div class="history-body">
+          <div class="history-date" data-i18n="hist.15.date">6 ноя 2026 · 19:37</div>
+          <h3 data-i18n="hist.15.title">Переход на Electron + Vulkan</h3>
+          <p data-i18n="hist.15.desc1">«Вышло обновление 1.5! Игра полностью перенесена на движок Electron с прямым доступом к видеокарте через Vulkan. Добавлены 16K текстуры Земли, также в настройках можно редактировать магнитуду звёзд (по умолчанию 6.0, взято с SpaceEngine).»</p>
+          <p data-i18n="hist.15.desc2">«Что не было реализовано, но планировалось: деревья — будут добавлены в ближайшем патче. Теперь есть 499 реальных звёзд!»</p>
+        </div>
+      </div>
+
+      <div class="history-item">
+        <div class="history-marker">1.5.1</div>
+        <div class="history-body">
+          <div class="history-date" data-i18n="hist.151.date">6 ноя 2026 · 22:04</div>
+          <h3 data-i18n="hist.151.title">Первая галактика</h3>
+          <p data-i18n="hist.151.desc1">«Новое обновление 1.5.1: добавлена галактика (могут быть ошибки, например галактика видна в атмосфере, но не видна на поверхности — DeepSeek задолбал).»</p>
+          <p data-i18n="hist.151.desc2">«Сообщение "ой, вы улетели далеко, вернуться?" увеличено до дистанции 1 000 000 световых лет. Остальное вроде как не изменено.»</p>
+        </div>
+      </div>
+
+      <div class="history-item">
+        <div class="history-marker">1.5.2</div>
+        <div class="history-body">
+          <div class="history-date" data-i18n="hist.152.date">7 ноя 2026 · 00:11</div>
+          <h3 data-i18n="hist.152.title">Реалистичная галактика</h3>
+          <p data-i18n="hist.152.desc1">«Обновление 1.5.2 вышло! Более реалистичная форма галактики (ура, Клод теперь снова доступен!). "Чёрная луна" пофикшена. Все фиксы благодаря <strong>DougDoug23</strong>.»</p>
+        </div>
+      </div>
+
+      <div class="history-item">
+        <div class="history-marker">1.6</div>
+        <div class="history-body">
+          <div class="history-date" data-i18n="hist.16.date">7 ноя 2026 · 01:13</div>
+          <h3 data-i18n="hist.16.title">«Галактические путешествия»</h3>
+          <p data-i18n="hist.16.desc1">«Обновление 1.6 вышло! Название обновления: галактические путешествия. Добавлена модель галактики — было 3 версии, каждая лучше другой. Добавлена центральная чёрная дыра и эффект гравитационного линзирования для неё. Также добавлена реальная текстура для Луны.»</p>
+          <p data-i18n="hist.16.desc2">В тот же день вышел официальный трейлер игры на YouTube.</p>
+        </div>
+      </div>
+
+      <div class="history-item">
+        <div class="history-marker">1.6.1</div>
+        <div class="history-body">
+          <div class="history-date" data-i18n="hist.161.date">8 ноя 2026 · 15:25</div>
+          <h3 data-i18n="hist.161.title">Полярные сияния, кометы, гелиосфера и KSP-фундамент</h3>
+          <p data-i18n="hist.161.desc1">Ключевое обновление с большим списком нововведений:</p>
+          <ul>
+            <li data-i18n-html="hist.161.li1"><strong>Полярные сияния</strong> у планет с магнитным полем</li>
+            <li data-i18n-html="hist.161.li2">Можно <strong>входить внутрь газовых гигантов</strong></li>
+            <li data-i18n-html="hist.161.li3">Нажатие <strong>U</strong> скрывает весь интерфейс — для красивых скриншотов</li>
+            <li data-i18n-html="hist.161.li4">Добавлены <strong>кометы</strong> с хвостами</li>
+            <li data-i18n-html="hist.161.li5"><strong>Аккреционные диски вокруг Стрельца A*</strong> (чёрная дыра в центре Галактики)</li>
+            <li data-i18n-html="hist.161.li6">Можно <strong>смотреть во все стороны на поверхности Земли</strong> — тоже для скриншотов</li>
+            <li data-i18n-html="hist.161.li7">Добавлена <strong>гелиосфера</strong> (включается/выключается в настройках; частицы пока кривоваты — «Клод сам виноват»)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="history-item">
+        <div class="history-marker">1.6.2</div>
+        <div class="history-body">
+          <div class="history-date" data-i18n="hist.162.date">8 ноя 2026 · 17:41 — 19:42</div>
+          <h3 data-i18n="hist.162.title">Текстуры всей Солнечной системы</h3>
+          <p data-i18n="hist.162.desc1">«Новости про обновление 1.6.2: я добавлю текстуры для всей Солнечной системы вместо процедурной генерации, игра будет грузить гораздо дольше — так что простите. Я добавил 16K текстуры для Юпитера (лол).»</p>
+          <p data-i18n="hist.162.desc2">По ходу дня: завершены текстуры для каждого спутника Сатурна, Урана и Нептуна (их всего 2, поэтому быстро). Переработаны модели Марса, Сатурна и Урана — качество выше, расширение больше. «Игра всё тяжелее и тяжелее.»</p>
+          <p data-i18n="hist.162.desc3">Релизная заметка: «Добавлены текстуры для всей Солнечной системы, а также переработаны текстуры для некоторых планет. Обновление делал вручную — если будет дофига багов, то извините.»</p>
+        </div>
+      </div>
+
+      <div class="history-item">
+        <div class="history-marker">1.6.3</div>
+        <div class="history-body">
+          <div class="history-date" data-i18n="hist.163.date">8–9 ноя 2026 · анонс 20:22, релиз 08:02</div>
+          <h3 data-i18n="hist.163.title">Динамическое смещение координат, музыка, G-наведение и Седна</h3>
+          <p data-i18n="hist.163.desc1">Анонс: «Добавлена музыка из SpaceEngine. Игра будет всё больше похожа на SpaceEngine из-за нового управления — кстати, теперь можно долететь до объекта, нажав <strong>G</strong>, за 4 секунды. Добавлена <strong>Андромеда</strong>.»</p>
+          <p data-i18n="hist.163.desc2">В тот же день добавлено <strong>динамическое смещение координат</strong> (как в SpaceEngine). «В будущем это позволит создать TRAPPIST-1 в масштабе 1:1.» Также добавлена <strong>Седна</strong> с реальной орбитой.</p>
+          <p data-i18n="hist.163.desc3">Полный changelog: «В 1.6.3 добавлено динамическое смещение координат, музыка, нацеливание и прилёт с помощью G, переписано управление камеры — теперь 1× это фиксированное число, добавлена Седна с реальной орбитой. В общем, очень много изменений!»</p>
+          <p data-i18n="hist.163.desc4">Позже (9 ноября): релиз на itch.io. Перед этим была короткая паника из-за авторских прав на музыку — вся музыка была удалена, чтобы страницу можно было опубликовать.</p>
+        </div>
+      </div>
+
+      <div class="history-item latest">
+        <div class="history-marker">1.7</div>
+        <div class="history-body">
+          <div class="history-date" data-i18n="hist.17.date">9–10 ноя 2026</div>
+          <h3 data-i18n="hist.17.title">Точные орбиты, новая камера, меню загрузки и большая оптимизация</h3>
+          <p data-i18n="hist.17.desc1">9 ноября: «В 1.6.4 (позже переименовано в 1.7) я уточнил все орбиты — они очень сильно уточнены по данным NASA JPL эпохи 2000.»</p>
+          <p data-i18n="hist.17.desc2">Планировались ПОЛНОСТЬЮ процедурные планеты, звёзды и газовые гиганты — но они временно отменены: «Claude сожрал 2 лимита только чтобы начать писать хоть немного строчек кода, это отлаживалось бы очень далеко.»</p>
+          <p data-i18n="hist.17.desc3">10 ноября: «В 1.7 добавил большую оптимизацию. Убрал лаги, игра загружается быстрее, но пришлось пожертвовать сверхкачественными текстурами.»</p>
+          <p data-i18n="hist.17.desc4">Полный changelog 1.7: «Очень большая оптимизация — вы можете заметить, что текстуры планет ухудшились, это нормально. Добавлено меню загрузки. Добавлены <strong>Гунгун, Квавар, Орк, Салация</strong>. Добавлена музыка. Добавлена Андромеда. Довольно много чего было добавлено. Также изменён режим камеры полностью. Добавлено наведение на G.»</p>
+          <p data-i18n="hist.17.desc5">Потом пришлось экстренно удалить сборку из-за авторских прав на музыку из Interstellar («cornfield chase»), после чего всё было перезалито с новой музыкой. Релиз вышел на itch.io.</p>
+        </div>
+      </div>
+
+      <div class="history-item current">
+        <div class="history-marker">1.7.1</div>
+        <div class="history-body">
+          <div class="history-date" data-i18n="hist.171.date">11–12 ноя 2026 · уже доступна</div>
+          <h3 data-i18n="hist.171.title">«Полный KSP внутри»</h3>
+          <p data-i18n="hist.171.desc1">Главный релиз последних дней. Началось с анонса 11 ноября: «Будет добавлено полностью управляемое время, а также добавлены 2 spacecraft с их реальной историей — а именно Вояджер-1 и Новые горизонты, их пролёт и т.д., с точностью до минут или даже секунд. Такое очень сложно реализовать, поэтому возможны незначительные баги, но это очень вряд ли.»</p>
+          <p data-i18n="hist.171.desc2">Дополнительно: «Добавлено больше музыки (например, музыка Ханса Циммера из "Интерстеллара"). Смог оптимизировать 16K текстуры облаков и поверхности для планеты Земля. Также планируется добавление телескопа Хаббл — но Клод опять съел лимиты.»</p>
+          <p data-i18n="hist.171.desc3">В тот же день — обновление физики атмосфер: «Шейдер считает рассеяние света вдоль каждого луча через слой с экспоненциально убывающей плотностью.»</p>
+          <p data-i18n="hist.171.desc4">Самый амбициозный шаг — <strong>полноценный KSP внутри игры</strong>: «Клод уже написал N-body тела, систему конических сечений, а также сферы влияния планет. Теперь там есть navball, альтиметр, всё такое, аэродинамика атмосферы и т.д. В 1.7.1 можете ждать KSP только с межзвёздными перелётами 1:1.»</p>
+          <p data-i18n="hist.171.desc5">Управление ракетой: <strong>Пробел</strong> — зажигание и отделение ступени; <strong>Shift / Ctrl</strong> — тяга больше/меньше; <strong>Z / X</strong> — тяга на максимум/в ноль; <strong>W S, A D, Q E</strong> — тангаж, рыскание, крен; <strong>1–0</strong> — режимы САУ; <strong>P</strong> — автопилот выхода на орбиту; <strong>V</strong> — сброс камеры; <strong>колесо мыши</strong> — расстояние до ракеты.</p>
+          <p data-i18n="hist.171.desc6">Релизная заметка: «Обновление 1.7.1 вышло! Всё сказано выше, извините за баганный navball — исправлю его потом, а пока обновление и так сверхмасштабное. А также в 1.7.1 добавил полный KSP внутрь.»</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="roadmap">
+    <h2 class="section-title" data-i18n="rm.title">Roadmap</h2>
+    <p class="section-sub" data-i18n="rm.sub">Планы развития — от текущей сборки к полностью процедурным звёздным системам. Всё по-прежнему в одном .exe.</p>
+
+    <div class="roadmap">
+      <div class="roadmap-item current">
+        <div class="roadmap-marker">🚀</div>
+        <div class="roadmap-tag" data-i18n="rm.cur.tag">В работе</div>
+        <h3 data-i18n="rm.cur.title">Стабилизация KSP-режима и исправление navball</h3>
+        <p data-i18n="rm.cur.text">Полный KSP внутри уже работает в 1.7.1, но navball пока баганный — автор обещал исправить в ближайшем патче. Параллельно — больше музыки из KSP и фильмов.</p>
+      </div>
+      <div class="roadmap-item next">
+        <div class="roadmap-marker">🪐</div>
+        <div class="roadmap-tag" data-i18n="rm.next.tag">Следующее</div>
+        <h3 data-i18n="rm.next.title">TRAPPIST-1 и другие экзосистемы</h3>
+        <p data-i18n="rm.next.text">Динамическое смещение координат (добавлено в 1.6.3) — фундамент для экзосистем. «В будущем это позволит создать TRAPPIST-1 в масштабе 1:1». Семь планет, приливный захват, резонанс 2:1, красный карлик.</p>
+      </div>
+      <div class="roadmap-item future">
+        <div class="roadmap-marker">🌌</div>
+        <div class="roadmap-tag" data-i18n="rm.fut.tag">Долгосрочная цель</div>
+        <h3 data-i18n="rm.fut.title">Процедурные звёздные системы</h3>
+        <p data-i18n="rm.fut.text">Полностью процедурная генерация: спектральные классы звёзд, скалистые планеты, газовые гиганты, спутники, ледяные тела, кольца и малые объекты. Временно отложено из-за лимитов Claude, но в планах.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div>
+    <strong style="color: var(--fg);">Planetarium 1:1</strong> · <span data-i18n="foot.platform">Windows .exe</span> · © 2026
+  </div>
+  <div>
+    <a href="https://eygen.itch.io/planetarium" target="_blank" rel="noopener">itch.io</a>
+    · <a class="footer-trailer" href="https://www.youtube.com/watch?v=pcclsGNm43Y" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M23.5 6.2c-.3-1.1-1.1-1.9-2.2-2.2C19.3 3.5 12 3.5 12 3.5s-7.3 0-9.3.5C1.6 4.3.8 5.1.5 6.2.0 8.2.0 12 .0 12s0 3.8.5 5.8c.3 1.1 1.1 1.9 2.2 2.2 2 .5 9.3.5 9.3.5s7.3 0 9.3-.5c1.1-.3 1.9-1.1 2.2-2.2.5-2 .5-5.8.5-5.8s0-3.8-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/>
+        </svg>
+        <span data-i18n="foot.trailer">трейлер</span>
+      </a>
+    · <span data-i18n="foot.tag">Electron + WebGL 2.0 · сделано с любовью к космосу</span>
+  </div>
+</footer>
+
+<script>
+  /* ---------- Звёздное небо ---------- */
+  (function () {
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+    let w = 0, h = 0, stars = [], shooting = [], dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    function resize() {
+      w = window.innerWidth; h = window.innerHeight;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      canvas.style.width = w + 'px'; canvas.style.height = h + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      initStars();
+    }
+    function initStars() {
+      const count = Math.min(900, Math.floor((w * h) / 3500));
+      stars = [];
+      for (let i = 0; i < count; i++) {
+        stars.push({
+          x: Math.random() * w, y: Math.random() * h,
+          r: Math.random() * 1.3 + 0.25,
+          baseA: Math.random() * 0.6 + 0.25,
+          speed: Math.random() * 0.0018 + 0.0006,
+          phase: Math.random() * Math.PI * 2,
+          tint: Math.random()
+        });
+      }
+    }
+    function spawnShooting() {
+      if (Math.random() > 0.004) return;
+      shooting.push({ x: Math.random() * w, y: Math.random() * h * 0.4, vx: -3 - Math.random() * 3, vy: 1.5 + Math.random() * 1.5, life: 60 + Math.random() * 40, maxLife: 100 });
+    }
+    function frame(t) {
+      ctx.clearRect(0, 0, w, h);
+      for (let i = 0; i < stars.length; i++) {
+        const s = stars[i];
+        const tw = 0.65 + 0.35 * Math.sin(t * s.speed + s.phase);
+        const a = s.baseA * tw;
+        let color;
+        if (s.tint < 0.7) color = `rgba(220, 230, 255, ${a})`;
+        else if (s.tint < 0.9) color = `rgba(255, 230, 200, ${a})`;
+        else color = `rgba(180, 200, 255, ${a})`;
+        ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = color; ctx.fill();
+      }
+      spawnShooting();
+      for (let i = shooting.length - 1; i >= 0; i--) {
+        const sh = shooting[i];
+        sh.x += sh.vx; sh.y += sh.vy; sh.life--;
+        const a = Math.min(1, sh.life / sh.maxLife) * 0.9;
+        const grad = ctx.createLinearGradient(sh.x, sh.y, sh.x - sh.vx * 12, sh.y - sh.vy * 12);
+        grad.addColorStop(0, `rgba(255,255,255,${a})`);
+        grad.addColorStop(1, 'rgba(255,255,255,0)');
+        ctx.strokeStyle = grad; ctx.lineWidth = 1.6;
+        ctx.beginPath(); ctx.moveTo(sh.x, sh.y);
+        ctx.lineTo(sh.x - sh.vx * 12, sh.y - sh.vy * 12); ctx.stroke();
+        if (sh.life <= 0 || sh.x < -50 || sh.y > h + 50) shooting.splice(i, 1);
+      }
+      requestAnimationFrame(frame);
+    }
+    window.addEventListener('resize', resize);
+    resize();
+    requestAnimationFrame(frame);
+  })();
+
+  /* ---------- i18n ---------- */
+  const I18N = {
+    ru: {
+      'title': 'Planetarium 1:1 — Windows .exe',
+      'nav.features': 'Возможности',
+      'nav.trailer': 'Трейлер',
+      'nav.req': 'Требования',
+      'nav.versions': 'Версии',
+      'nav.history': 'История',
+      'nav.roadmap': 'Roadmap',
+      'hero.badge': 'v1.7.1 · Windows .exe · Стабильная',
+      'hero.tagline': '<strong>Солнечная система в реальном масштабе</strong> — нативное десктопное приложение на Electron с рендером через <strong>WebGL 2.0 / Vulkan</strong>. Реальные орбиты, чёрная дыра Sgr A*, галактики — и теперь полноценная KSP-физика внутри — в одном <strong>.exe</strong>, без браузера и без интернета.',
+      'hero.download': 'Скачать для Windows (.exe)',
+      'hero.trailer': 'Смотреть трейлер',
+      'hero.trailer.badge': 'v1.6',
+      'hero.trailer.note': 'трейлер записан на версии 1.6 · YouTube',
+      'hero.pill.offline': 'Офлайн',
+      'hero.pill.after': 'после скачивания',
+
+      'trailer.title': 'Трейлер',
+      'trailer.sub': 'Официальный игровой трейлер Planetarium. Записан на версии 1.6 — с тех пор игра получила много обновлений, но дух остался тем же.',
+      'trailer.card.title': 'Космическая сосиска — game trailer',
+      'trailer.card.sub': 'YouTube · нажми, чтобы открыть',
+
+      'feat.title': 'Что внутри',
+      'feat.sub': 'Полноценный симулятор космоса с KSP-физикой внутри — упакованный в один .exe. Реальные эфемериды, масштаб 1:1 и нативная графика на Electron + WebGL 2.0 (Vulkan).',
+      'feat.1.title': 'Реальные орбиты',
+      'feat.1.desc': 'Кеплеровские элементы JPL для планет, карликовых планет, комет и Седны. Позиции пересчитываются в реальном времени с точностью до секунды.',
+      'feat.2.title': 'KSP-физика',
+      'feat.2.desc': 'N-body гравитация, конические сечения, сферы влияния планет, navball, альтиметр и аэродинамика атмосферы — полноценный орбитальный симулятор.',
+      'feat.3.title': 'Sgr A* — чёрная дыра',
+      'feat.3.desc': 'Трассировка лучей в метрике Шварцшильда: фотонное кольцо, аккреционный диск и гравитационное линзирование.',
+      'feat.4.title': 'Кометы и пояса',
+      'feat.4.desc': 'Галлея, Энке, Чурюмова-Герасименко, Хейла-Боппа. Плюс пояс астероидов и пояс Койпера с тысячами объектов.',
+      'feat.5.title': 'Космические аппараты',
+      'feat.5.desc': 'Хаббл, Вояджер-1 и Новые горизонты с реальной историей полёта — пролёты Юпитера, Сатурна, Плутона — с точностью до минут.',
+      'feat.6.title': 'Галактики',
+      'feat.6.desc': 'Млечный Путь со спиральными рукавами и перемычкой, Туманность Андромеды и её спутники M32 и M110.',
+      'feat.7.title': 'Полярные сияния',
+      'feat.7.desc': 'Магнитные овалы Земли, Юпитера, Сатурна, Урана и Нептуна с корректным наклоном магнитной оси.',
+      'feat.8.title': 'Управление временем',
+      'feat.8.desc': 'Полное управление временем: от ×1 (реальное) до 10 лет в секунду, обратный ход, пауза, переход на любую дату.',
+
+      'tech.title': 'Технологии',
+      'tech.sub': 'Не веб-страница и не браузерная игра — нативное десктопное приложение. Рендеринг идёт через WebGL 2.0 с аппаратным ускорением (DirectX 11 или Vulkan-бэкенд).',
+      'tech.1.label': 'Оболочка',
+      'tech.1.desc': 'Standalone .exe-приложение с собственным окном. Запускается двойным кликом, без браузера и установки.',
+      'tech.2.label': 'Рендер',
+      'tech.2.desc': 'Аппаратное ускорение через Chromium ANGLE: DirectX 11 или Vulkan-бэкенд — приложение само выберет оптимальный путь.',
+      'tech.3.label': 'Платформа',
+      'tech.3.desc': 'Windows 10 и 11, 64-bit. .exe-файл, распространяется через itch.io.',
+      'tech.4.label': 'Сеть',
+      'tech.4.value': 'Offline',
+      'tech.4.desc': 'Все текстуры и эфемериды внутри приложения. Интернет нужен только для скачивания.',
+
+      'req.title': 'Системные требования',
+      'req.sub': 'Приложение лёгкое: подойдёт даже офисный ПК или старый ноутбук со встроенной графикой. Нужна поддержка WebGL 2.0 (входит в DirectX 11) или Vulkan — приложение использует аппаратное ускорение через Chromium.',
+      'req.min': 'Минимальные',
+      'req.rec': 'Рекомендуемые',
+      'req.max': 'Максимальные',
+      'req.row.os': 'ОС',
+      'req.row.cpu': 'Процессор',
+      'req.row.ram': 'ОЗУ',
+      'req.row.gpu': 'Видеокарта',
+      'req.row.api': 'API',
+      'req.row.disk': 'Место на диске',
+      'req.row.storage': 'Накопитель',
+      'req.min.os': 'Windows 10 (64-bit)',
+      'req.min.cpu': 'Intel Core i3-3220<br>/ AMD Athlon X4 740',
+      'req.min.ram': '4 GB',
+      'req.min.gpu': 'Intel HD 4000 / Radeon R5<br>или дискретная 1 GB',
+      'req.min.api': 'DirectX 11 / WebGL 2.0',
+      'req.min.disk': '~300 MB',
+      'req.rec.os': 'Windows 10 / 11 (64-bit)',
+      'req.rec.cpu': 'Intel Core i5-6500<br>/ AMD Ryzen 3 1200',
+      'req.rec.ram': '8 GB',
+      'req.rec.gpu': 'GTX 750 Ti / RX 550<br>или UHD 630 / Vega 8',
+      'req.rec.api': 'DirectX 11 / Vulkan',
+      'req.rec.disk': '~400 MB',
+      'req.max.os': 'Windows 11 (64-bit)',
+      'req.max.cpu': 'Intel Core i5-10400F<br>/ AMD Ryzen 5 3600',
+      'req.max.ram': '16 GB',
+      'req.max.gpu': 'GTX 1060 (6 GB)<br>/ RX 580 (8 GB)',
+      'req.max.api': 'Vulkan / DirectX 11',
+      'req.max.storage': 'SSD · ~500 MB',
+      'req.note': '<strong style="color:var(--fg)">Только Windows.</strong> .exe распространяется через itch.io. Linux и macOS-сборок пока нет. Нужна поддержка WebGL 2.0 (DirectX 11) или Vulkan — на GPU без этих API приложение не запустится. В «максимальной» конфигурации приложение ставится на SSD: быстрее загрузка текстур и сцен.',
+
+      'ver.title': 'Версии',
+      'ver.sub': 'Сейчас доступна сборка v1.7.1 — она стала публичной совсем недавно. Ветка v1.8 находится в закрытой разработке.',
+      'ver.stable.tag': '● Стабильная · Доступна',
+      'ver.stable.sub': 'Текущий публичный релиз',
+      'ver.stable.f1': 'Полное управление временем — от ×1 до 10 лет в секунду',
+      'ver.stable.f2': 'KSP-режим: N-body гравитация, конические сечения, сферы влияния, navball, альтиметр, аэродинамика',
+      'ver.stable.f3': '3 аппарата — Хаббл, Вояджер-1, Новые горизонты — с реальной историей до минут',
+      'ver.stable.f4': 'Обновлённые атмосферы — новая физика рассеяния',
+      'ver.stable.f5': 'Оптимизированные 16K текстуры облаков и поверхности Земли',
+      'ver.stable.f6': 'Больше музыки — включая Ханса Циммера из «Интерстеллара»',
+      'ver.stable.cta': 'Скачать .exe v1.7.1 →',
+      'ver.stable.trailer': '🎬 Трейлер',
+      'ver.dev.tag': '🔒 Dev · В разработке',
+      'ver.dev.sub': 'Следующая ветка · не анонсирована публично',
+      'ver.dev.platform': 'приватный билд',
+      'ver.dev.f1': 'Улучшенная стабильность KSP-режима и исправление баганного navball',
+      'ver.dev.f2': 'Больше музыки из игр и фильмов (включая KSP и Interstellar)',
+      'ver.dev.f3': 'TRAPPIST-1 и другие экзосистемы — благодаря динамическому смещению координат',
+      'ver.dev.f4': 'Процедурные планеты, звёзды и газовые гиганты',
+      'ver.dev.cta': '🔒 Пока недоступна',
+
+      'hist.title': 'История версий',
+      'hist.sub': 'Подробные описания каждого обновления — как они публиковались в Discord.',
+
+      'hist.11.date': '6 ноя 2026 · 00:09',
+      'hist.11.title': 'Первый релиз',
+      'hist.11.desc1': '«ВНИМАНИЕ: вышла игра в релиз! 8 планет — некоторые без текстур, а точнее многие, просто потому что я делал этот проект в спешке. Скоро будет больше.»',
+      'hist.11.desc2': 'Что уже было в первом релизе: астероидный пояс с 4 000 астероидов, пояс Койпера с 7 000 астероидов — на них можно смотреть вблизи. Короче, играйте.',
+
+      'hist.12.date': '6 ноя 2026 · 00:27',
+      'hist.12.title': 'Багфиксы, граница и языки',
+      'hist.12.desc1': 'Вышло обновление 1.2:',
+      'hist.12.desc2': '1. Исправлен пояс астероидов (спасибо <strong>DougDoug23</strong>). 2. Теперь, если отдалиться слишком далеко (10 000 световых лет), появится сообщение о возвращении назад (автор идеи: <strong>AERO ЧЕЛ</strong>). 3. Добавлена поддержка 2 новых языков.',
+
+      'hist.13.date': '6 ноя 2026 · 04:07',
+      'hist.13.title': 'Поверхность с 500 метров и настоящая атмосфера',
+      'hist.13.desc1': '«ВНИМАНИЕ! ВЫШЛО ОБНОВЛЕНИЕ 1.3. Нововведения: загрузка поверхности начиная с 500 метров (очень сыро, оно плоское, но всё будет сделано). Все баги, которые были в разделе bugs and suggestions, исправлены!»',
+      'hist.13.desc2': '«Атмосфера больше не фантастическая и она не плоская! В будущем планирую адаптировать к этому облака. Также добавлено 49 новых звёзд (они без названий, т.к. были жёсткие баги с отображением).»',
+
+      'hist.14.date': '6 ноя 2026 · 12:33',
+      'hist.14.title': 'Фидбэк сообщества',
+      'hist.14.desc1': '«ВЫШЛО ОБНОВЛЕНИЕ 1.4: добавили много того, что вы предлагали (спасибо <strong>AERO ЧЕЛ</strong>). Исправлен баг с террейном.»',
+
+      'hist.141.date': '6 ноя 2026 · 12:44',
+      'hist.141.title': 'QoL-обновление',
+      'hist.141.desc1': '«Небольшое QoL-обновление (quality of life) 1.4.1: добавлены настройки вкл-выкл для показа астеройдов, а орбиты и названия перенесены в настройки при нажатии Esc.»',
+
+      'hist.15.date': '6 ноя 2026 · 19:37',
+      'hist.15.title': 'Переход на Electron + Vulkan',
+      'hist.15.desc1': '«Вышло обновление 1.5! Игра полностью перенесена на движок Electron с прямым доступом к видеокарте через Vulkan. Добавлены 16K текстуры Земли, также в настройках можно редактировать магнитуду звёзд (по умолчанию 6.0, взято с SpaceEngine).»',
+      'hist.15.desc2': '«Что не было реализовано, но планировалось: деревья — будут добавлены в ближайшем патче. Теперь есть 499 реальных звёзд!»',
+
+      'hist.151.date': '6 ноя 2026 · 22:04',
+      'hist.151.title': 'Первая галактика',
+      'hist.151.desc1': '«Новое обновление 1.5.1: добавлена галактика (могут быть ошибки, например галактика видна в атмосфере, но не видна на поверхности — DeepSeek задолбал).»',
+      'hist.151.desc2': '«Сообщение "ой, вы улетели далеко, вернуться?" увеличено до дистанции 1 000 000 световых лет. Остальное вроде как не изменено.»',
+
+      'hist.152.date': '7 ноя 2026 · 00:11',
+      'hist.152.title': 'Реалистичная галактика',
+      'hist.152.desc1': '«Обновление 1.5.2 вышло! Более реалистичная форма галактики (ура, Клод теперь снова доступен!). "Чёрная луна" пофикшена. Все фиксы благодаря <strong>DougDoug23</strong>.»',
+
+      'hist.16.date': '7 ноя 2026 · 01:13',
+      'hist.16.title': '«Галактические путешествия»',
+      'hist.16.desc1': '«Обновление 1.6 вышло! Название обновления: галактические путешествия. Добавлена модель галактики — было 3 версии, каждая лучше другой. Добавлена центральная чёрная дыра и эффект гравитационного линзирования для неё. Также добавлена реальная текстура для Луны.»',
+      'hist.16.desc2': 'В тот же день вышел официальный трейлер игры на YouTube.',
+
+      'hist.161.date': '8 ноя 2026 · 15:25',
+      'hist.161.title': 'Полярные сияния, кометы, гелиосфера и KSP-фундамент',
+      'hist.161.desc1': 'Ключевое обновление с большим списком нововведений:',
+      'hist.161.li1': '<strong>Полярные сияния</strong> у планет с магнитным полем',
+      'hist.161.li2': 'Можно <strong>входить внутрь газовых гигантов</strong>',
+      'hist.161.li3': 'Нажатие <strong>U</strong> скрывает весь интерфейс — для красивых скриншотов',
+      'hist.161.li4': 'Добавлены <strong>кометы</strong> с хвостами',
+      'hist.161.li5': '<strong>Аккреционные диски вокруг Стрельца A*</strong> (чёрная дыра в центре Галактики)',
+      'hist.161.li6': 'Можно <strong>смотреть во все стороны на поверхности Земли</strong> — тоже для скриншотов',
+      'hist.161.li7': 'Добавлена <strong>гелиосфера</strong> (включается/выключается в настройках; частицы пока кривоваты — «Клод сам виноват»)',
+
+      'hist.162.date': '8 ноя 2026 · 17:41 — 19:42',
+      'hist.162.title': 'Текстуры всей Солнечной системы',
+      'hist.162.desc1': '«Новости про обновление 1.6.2: я добавлю текстуры для всей Солнечной системы вместо процедурной генерации, игра будет грузить гораздо дольше — так что простите. Я добавил 16K текстуры для Юпитера (лол).»',
+      'hist.162.desc2': 'По ходу дня: завершены текстуры для каждого спутника Сатурна, Урана и Нептуна (их всего 2, поэтому быстро). Переработаны модели Марса, Сатурна и Урана — качество выше, расширение больше. «Игра всё тяжелее и тяжелее.»',
+      'hist.162.desc3': 'Релизная заметка: «Добавлены текстуры для всей Солнечной системы, а также переработаны текстуры для некоторых планет. Обновление делал вручную — если будет дофига багов, то извините.»',
+
+      'hist.163.date': '8–9 ноя 2026 · анонс 20:22, релиз 08:02',
+      'hist.163.title': 'Динамическое смещение координат, музыка, G-наведение и Седна',
+      'hist.163.desc1': 'Анонс: «Добавлена музыка из SpaceEngine. Игра будет всё больше похожа на SpaceEngine из-за нового управления — кстати, теперь можно долететь до объекта, нажав <strong>G</strong>, за 4 секунды. Добавлена <strong>Андромеда</strong>.»',
+      'hist.163.desc2': 'В тот же день добавлено <strong>динамическое смещение координат</strong> (как в SpaceEngine). «В будущем это позволит создать TRAPPIST-1 в масштабе 1:1.» Также добавлена <strong>Седна</strong> с реальной орбитой.',
+      'hist.163.desc3': 'Полный changelog: «В 1.6.3 добавлено динамическое смещение координат, музыка, нацеливание и прилёт с помощью G, переписано управление камеры — теперь 1× это фиксированное число, добавлена Седна с реальной орбитой. В общем, очень много изменений!»',
+      'hist.163.desc4': 'Позже (9 ноября): релиз на itch.io. Перед этим была короткая паника из-за авторских прав на музыку — вся музыка была удалена, чтобы страницу можно было опубликовать.',
+
+      'hist.17.date': '9–10 ноя 2026',
+      'hist.17.title': 'Точные орбиты, новая камера, меню загрузки и большая оптимизация',
+      'hist.17.desc1': '9 ноября: «В 1.6.4 (позже переименовано в 1.7) я уточнил все орбиты — они очень сильно уточнены по данным NASA JPL эпохи 2000.»',
+      'hist.17.desc2': 'Планировались ПОЛНОСТЬЮ процедурные планеты, звёзды и газовые гиганты — но они временно отменены: «Claude сожрал 2 лимита только чтобы начать писать хоть немного строчек кода, это отлаживалось бы очень далеко.»',
+      'hist.17.desc3': '10 ноября: «В 1.7 добавил большую оптимизацию. Убрал лаги, игра загружается быстрее, но пришлось пожертвовать сверхкачественными текстурами.»',
+      'hist.17.desc4': 'Полный changelog 1.7: «Очень большая оптимизация — вы можете заметить, что текстуры планет ухудшились, это нормально. Добавлено меню загрузки. Добавлены <strong>Гунгун, Квавар, Орк, Салация</strong>. Добавлена музыка. Добавлена Андромеда. Довольно много чего было добавлено. Также изменён режим камеры полностью. Добавлено наведение на G.»',
+      'hist.17.desc5': 'Потом пришлось экстренно удалить сборку из-за авторских прав на музыку из Interstellar («cornfield chase»), после чего всё было перезалито с новой музыкой. Релиз вышел на itch.io.',
+
+      'hist.171.date': '11–12 ноя 2026 · уже доступна',
+      'hist.171.title': '«Полный KSP внутри»',
+      'hist.171.desc1': 'Главный релиз последних дней. Началось с анонса 11 ноября: «Будет добавлено полностью управляемое время, а также добавлены 2 spacecraft с их реальной историей — а именно Вояджер-1 и Новые горизонты, их пролёт и т.д., с точностью до минут или даже секунд. Такое очень сложно реализовать, поэтому возможны незначительные баги, но это очень вряд ли.»',
+      'hist.171.desc2': 'Дополнительно: «Добавлено больше музыки (например, музыка Ханса Циммера из "Интерстеллара"). Смог оптимизировать 16K текстуры облаков и поверхности для планеты Земля. Также планируется добавление телескопа Хаббл — но Клод опять съел лимиты.»',
+      'hist.171.desc3': 'В тот же день — обновление физики атмосфер: «Шейдер считает рассеяние света вдоль каждого луча через слой с экспоненциально убывающей плотностью.»',
+      'hist.171.desc4': 'Самый амбициозный шаг — <strong>полноценный KSP внутри игры</strong>: «Клод уже написал N-body тела, систему конических сечений, а также сферы влияния планет. Теперь там есть navball, альтиметр, всё такое, аэродинамика атмосферы и т.д. В 1.7.1 можете ждать KSP только с межзвёздными перелётами 1:1.»',
+      'hist.171.desc5': 'Управление ракетой: <strong>Пробел</strong> — зажигание и отделение ступени; <strong>Shift / Ctrl</strong> — тяга больше/меньше; <strong>Z / X</strong> — тяга на максимум/в ноль; <strong>W S, A D, Q E</strong> — тангаж, рыскание, крен; <strong>1–0</strong> — режимы САУ; <strong>P</strong> — автопилот выхода на орбиту; <strong>V</strong> — сброс камеры; <strong>колесо мыши</strong> — расстояние до ракеты.',
+      'hist.171.desc6': 'Релизная заметка: «Обновление 1.7.1 вышло! Всё сказано выше, извините за баганный navball — исправлю его потом, а пока обновление и так сверхмасштабное. А также в 1.7.1 добавил полный KSP внутрь.»',
+
+      'rm.title': 'Roadmap',
+      'rm.sub': 'Планы развития — от текущей сборки к полностью процедурным звёздным системам. Всё по-прежнему в одном .exe.',
+      'rm.cur.tag': 'В работе',
+      'rm.cur.title': 'Стабилизация KSP-режима и исправление navball',
+      'rm.cur.text': 'Полный KSP внутри уже работает в 1.7.1, но navball пока баганный — автор обещал исправить в ближайшем патче. Параллельно — больше музыки из KSP и фильмов.',
+      'rm.next.tag': 'Следующее',
+      'rm.next.title': 'TRAPPIST-1 и другие экзосистемы',
+      'rm.next.text': 'Динамическое смещение координат (добавлено в 1.6.3) — фундамент для экзосистем. «В будущем это позволит создать TRAPPIST-1 в масштабе 1:1». Семь планет, приливный захват, резонанс 2:1, красный карлик.',
+      'rm.fut.tag': 'Долгосрочная цель',
+      'rm.fut.title': 'Процедурные звёздные системы',
+      'rm.fut.text': 'Полностью процедурная генерация: спектральные классы звёзд, скалистые планеты, газовые гиганты, спутники, ледяные тела, кольца и малые объекты. Временно отложено из-за лимитов Claude, но в планах.',
+
+      'foot.platform': 'Windows .exe',
+      'foot.trailer': 'трейлер',
+      'foot.tag': 'Electron + WebGL 2.0 · сделано с любовью к космосу'
+    },
+
+    en: {
+      'title': 'Planetarium 1:1 — Windows .exe',
+      'nav.features': 'Features',
+      'nav.trailer': 'Trailer',
+      'nav.req': 'Requirements',
+      'nav.versions': 'Versions',
+      'nav.history': 'History',
+      'nav.roadmap': 'Roadmap',
+      'hero.badge': 'v1.7.1 · Windows .exe · Stable',
+      'hero.tagline': '<strong>Solar System at real scale</strong> — native desktop app on Electron rendering through <strong>WebGL 2.0 / Vulkan</strong>. Real orbits, the Sgr A* black hole, galaxies — and now full KSP physics inside — all in one <strong>.exe</strong>, no browser, no internet.',
+      'hero.download': 'Download for Windows (.exe)',
+      'hero.trailer': 'Watch trailer',
+      'hero.trailer.badge': 'v1.6',
+      'hero.trailer.note': 'trailer recorded on version 1.6 · YouTube',
+      'hero.pill.offline': 'Offline',
+      'hero.pill.after': 'after download',
+
+      'trailer.title': 'Trailer',
+      'trailer.sub': 'The official Planetarium game trailer. Recorded on version 1.6 — the game has received many updates since then, but the spirit stays the same.',
+      'trailer.card.title': 'Space Sausage — game trailer',
+      'trailer.card.sub': 'YouTube · click to open',
+
+      'feat.title': 'What is inside',
+      'feat.sub': 'A complete space simulator with full KSP physics inside — packed in one .exe. Real ephemerides, 1:1 scale and native graphics on Electron + WebGL 2.0 (Vulkan).',
+      'feat.1.title': 'Real orbits',
+      'feat.1.desc': 'JPL Keplerian elements for planets, dwarf planets, comets and Sedna. Positions recalculated in real time with second precision.',
+      'feat.2.title': 'KSP physics',
+      'feat.2.desc': 'N-body gravity, conic sections, planetary spheres of influence, navball, altimeter and atmospheric aerodynamics — a complete orbital simulator.',
+      'feat.3.title': 'Sgr A* — black hole',
+      'feat.3.desc': 'Ray tracing in the Schwarzschild metric: photon ring, accretion disk and gravitational lensing.',
+      'feat.4.title': 'Comets and belts',
+      'feat.4.desc': 'Halley, Encke, Churyumov–Gerasimenko, Hale–Bopp. Plus the asteroid belt and Kuiper belt with thousands of objects.',
+      'feat.5.title': 'Spacecraft',
+      'feat.5.desc': 'Hubble, Voyager 1 and New Horizons with real mission history — Jupiter, Saturn, Pluto flybys — accurate to the minute.',
+      'feat.6.title': 'Galaxies',
+      'feat.6.desc': 'The Milky Way with spiral arms and bar, the Andromeda galaxy and its satellites M32 and M110.',
+      'feat.7.title': 'Auroras',
+      'feat.7.desc': 'Magnetic ovals of Earth, Jupiter, Saturn, Uranus and Neptune with correct magnetic axis tilt.',
+      'feat.8.title': 'Time control',
+      'feat.8.desc': 'Full time control: from ×1 (real time) to 10 years per second, reverse, pause, jump to any date.',
+
+      'tech.title': 'Technologies',
+      'tech.sub': 'Not a web page and not a browser game — a native desktop application. Rendering goes through WebGL 2.0 with hardware acceleration (DirectX 11 or Vulkan backend).',
+      'tech.1.label': 'Shell',
+      'tech.1.desc': 'Standalone .exe app with its own window. Launches with a double click — no browser, no installation.',
+      'tech.2.label': 'Renderer',
+      'tech.2.desc': 'Hardware acceleration via Chromium ANGLE: DirectX 11 or Vulkan backend — the app picks the optimal path.',
+      'tech.3.label': 'Platform',
+      'tech.3.desc': 'Windows 10 and 11, 64-bit. .exe file, distributed via itch.io.',
+      'tech.4.label': 'Network',
+      'tech.4.value': 'Offline',
+      'tech.4.desc': 'All textures and ephemerides are inside the app. Internet is only needed for downloading.',
+
+      'req.title': 'System requirements',
+      'req.sub': 'The app is lightweight: it runs even on an office PC or an old laptop with integrated graphics. Requires WebGL 2.0 (part of DirectX 11) or Vulkan support — the app uses hardware acceleration via Chromium.',
+      'req.min': 'Minimum',
+      'req.rec': 'Recommended',
+      'req.max': 'Maximum',
+      'req.row.os': 'OS',
+      'req.row.cpu': 'CPU',
+      'req.row.ram': 'RAM',
+      'req.row.gpu': 'GPU',
+      'req.row.api': 'API',
+      'req.row.disk': 'Disk space',
+      'req.row.storage': 'Storage',
+      'req.min.os': 'Windows 10 (64-bit)',
+      'req.min.cpu': 'Intel Core i3-3220<br>/ AMD Athlon X4 740',
+      'req.min.ram': '4 GB',
+      'req.min.gpu': 'Intel HD 4000 / Radeon R5<br>or discrete 1 GB',
+      'req.min.api': 'DirectX 11 / WebGL 2.0',
+      'req.min.disk': '~300 MB',
+      'req.rec.os': 'Windows 10 / 11 (64-bit)',
+      'req.rec.cpu': 'Intel Core i5-6500<br>/ AMD Ryzen 3 1200',
+      'req.rec.ram': '8 GB',
+      'req.rec.gpu': 'GTX 750 Ti / RX 550<br>or UHD 630 / Vega 8',
+      'req.rec.api': 'DirectX 11 / Vulkan',
+      'req.rec.disk': '~400 MB',
+      'req.max.os': 'Windows 11 (64-bit)',
+      'req.max.cpu': 'Intel Core i5-10400F<br>/ AMD Ryzen 5 3600',
+      'req.max.ram': '16 GB',
+      'req.max.gpu': 'GTX 1060 (6 GB)<br>/ RX 580 (8 GB)',
+      'req.max.api': 'Vulkan / DirectX 11',
+      'req.max.storage': 'SSD · ~500 MB',
+      'req.note': '<strong style="color:var(--fg)">Windows only.</strong> The .exe is distributed via itch.io. Linux and macOS builds are not available yet. WebGL 2.0 (DirectX 11) or Vulkan support is required — the app won\'t launch on GPUs without these APIs. In the "maximum" configuration, install on an SSD: faster texture and scene loading.',
+
+      'ver.title': 'Versions',
+      'ver.sub': 'Build v1.7.1 is currently available — it went public very recently. The v1.8 branch is in closed development.',
+      'ver.stable.tag': '● Stable · Available',
+      'ver.stable.sub': 'Current public release',
+      'ver.stable.f1': 'Full time control — from ×1 to 10 years per second',
+      'ver.stable.f2': 'KSP mode: N-body gravity, conic sections, spheres of influence, navball, altimeter, aerodynamics',
+      'ver.stable.f3': '3 spacecraft — Hubble, Voyager 1, New Horizons — with real mission history to the minute',
+      'ver.stable.f4': 'Updated atmospheres — new scattering physics',
+      'ver.stable.f5': 'Optimized 16K cloud and surface textures for Earth',
+      'ver.stable.f6': 'More music — including Hans Zimmer from Interstellar',
+      'ver.stable.cta': 'Download .exe v1.7.1 →',
+      'ver.stable.trailer': '🎬 Trailer',
+      'ver.dev.tag': '🔒 Dev · In development',
+      'ver.dev.sub': 'Next branch · not publicly announced',
+      'ver.dev.platform': 'private build',
+      'ver.dev.f1': 'Improved KSP mode stability and fixed the buggy navball',
+      'ver.dev.f2': 'More music from games and films (including KSP and Interstellar)',
+      'ver.dev.f3': 'TRAPPIST-1 and other exosystems — thanks to dynamic coordinate shifting',
+      'ver.dev.f4': 'Procedural planets, stars and gas giants',
+      'ver.dev.cta': '🔒 Locked for now',
+
+      'hist.title': 'Version history',
+      'hist.sub': 'Detailed descriptions of each update — as they were posted on Discord.',
+
+      'hist.11.date': 'Nov 6, 2026 · 00:09',
+      'hist.11.title': 'First release',
+      'hist.11.desc1': '"ATTENTION: the game is released! 8 planets — some without textures, actually many, simply because I put this project together in a rush. More will be added soon."',
+      'hist.11.desc2': 'What the first release already had: an asteroid belt with 4,000 asteroids, a Kuiper belt with 7,000 asteroids — you can fly up to them and look. Anyway, go play.',
+
+      'hist.12.date': 'Nov 6, 2026 · 00:27',
+      'hist.12.title': 'Bugfixes, boundary and languages',
+      'hist.12.desc1': 'Update 1.2 has been released:',
+      'hist.12.desc2': '1. Asteroid belt fixed (thanks <strong>DougDoug23</strong>). 2. Now if you fly too far away (10,000 light-years), a message pops up prompting you to return (idea by <strong>AERO ЧЕЛ</strong>). 3. Support for 2 new languages added.',
+
+      'hist.13.date': 'Nov 6, 2026 · 04:07',
+      'hist.13.title': 'Surface from 500 meters and a real atmosphere',
+      'hist.13.desc1': '"ATTENTION! UPDATE 1.3 IS OUT. New: terrain loading starting at 500 meters (very rough, it\'s flat, but everything will be refined). All bugs reported in the bugs-and-suggestions section have been fixed!"',
+      'hist.13.desc2': '"The atmosphere is no longer unrealistic and it\'s no longer flat! In the future I plan to add cloud support on top of this. 49 new stars were also added (they are unnamed because there were severe display bugs)."',
+
+      'hist.14.date': 'Nov 6, 2026 · 12:33',
+      'hist.14.title': 'Community feedback',
+      'hist.14.desc1': '"UPDATE 1.4 IS OUT: we added a lot of what you suggested (thanks <strong>AERO ЧЕЛ</strong>). A bug with the terrain has been fixed."',
+
+      'hist.141.date': 'Nov 6, 2026 · 12:44',
+      'hist.141.title': 'QoL update',
+      'hist.141.desc1': '"Small QoL (quality of life) update 1.4.1: added on/off settings for asteroid display, and moved the orbit lines and label display to the settings menu (accessible via Esc)."',
+
+      'hist.15.date': 'Nov 6, 2026 · 19:37',
+      'hist.15.title': 'Migration to Electron + Vulkan',
+      'hist.15.desc1': '"Update 1.5 is out! The game has been completely migrated to the Electron engine with direct access to the graphics card via Vulkan. 16K Earth textures added, and you can now adjust the star magnitude in the settings (default is 6.0, taken from SpaceEngine)."',
+      'hist.15.desc2': '"What was not yet implemented (but planned): trees — will be added in an upcoming patch. There are now 499 real stars!"',
+
+      'hist.151.date': 'Nov 6, 2026 · 22:04',
+      'hist.151.title': 'First galaxy',
+      'hist.151.desc1': '"New update 1.5.1: a galaxy has been added (there may be bugs — for example the galaxy might be visible from the atmosphere but not from the surface; DeepSeek is driving me crazy)."',
+      'hist.151.desc2': '"The \'whoa, you flew far away, want to head back?\' prompt now triggers at a distance of 1,000,000 light-years. Everything else appears to be unchanged."',
+
+      'hist.152.date': 'Nov 7, 2026 · 00:11',
+      'hist.152.title': 'Realistic galaxy',
+      'hist.152.desc1': '"Update 1.5.2 is out! A more realistic galaxy shape (hooray, Claude is available again!). The \'black moon\' issue has been fixed. All fixes thanks to <strong>DougDoug23</strong>."',
+
+      'hist.16.date': 'Nov 7, 2026 · 01:13',
+      'hist.16.title': '"Galactic Journeys"',
+      'hist.16.desc1': '"Update 1.6 is out! The update is titled \'Galactic Journeys.\' A galaxy model has been added — there were 3 versions, each better than the last. A central black hole has been included, complete with a gravitational lensing effect. Additionally, a realistic texture for the Moon has been added."',
+      'hist.16.desc2': 'The official game trailer dropped on YouTube the same day.',
+
+      'hist.161.date': 'Nov 8, 2026 · 15:25',
+      'hist.161.title': 'Auroras, comets, heliosphere and the KSP foundation',
+      'hist.161.desc1': 'A key update with a long list of additions:',
+      'hist.161.li1': '<strong>Auroras</strong> on planets with a magnetic field',
+      'hist.161.li2': 'You can now <strong>enter inside gas giants</strong>',
+      'hist.161.li3': 'Pressing <strong>U</strong> hides the entire UI — perfect for beautiful screenshots',
+      'hist.161.li4': '<strong>Comets</strong> with tails added',
+      'hist.161.li5': '<strong>Accretion disks around Sagittarius A*</strong> (the black hole at the center of the Galaxy)',
+      'hist.161.li6': 'You can now <strong>look in any direction while on Earth\'s surface</strong> — also for screenshots',
+      'hist.161.li7': 'A <strong>heliosphere</strong> has been added (toggleable in settings; particles are a bit rough — "Claude\'s fault")',
+
+      'hist.162.date': 'Nov 8, 2026 · 17:41 — 19:42',
+      'hist.162.title': 'Textures for the whole Solar System',
+      'hist.162.desc1': '"News about update 1.6.2: I\'ll add textures for the entire Solar System instead of procedural generation — the game will load much longer, so forgive me. I added 16K textures for Jupiter (lol)."',
+      'hist.162.desc2': 'Throughout the day: finished textures for every moon of Saturn, Uranus and Neptune (there are only 2 — so that was fast). Reworked models for Mars, Saturn and Uranus — higher quality, bigger resolution. "The game is getting heavier and heavier."',
+      'hist.162.desc3': 'Release note: "Added textures for the entire Solar System, and reworked textures for some planets. The update was made by hand — if there\'s a shitload of bugs, sorry."',
+
+      'hist.163.date': 'Nov 8–9, 2026 · teaser 20:22, release 08:02',
+      'hist.163.title': 'Dynamic coordinate shifting, music, G-targeting and Sedna',
+      'hist.163.desc1': 'Teaser: "Music from SpaceEngine has been added. The game will increasingly resemble SpaceEngine, thanks to a new control scheme — by the way, you can now reach any object in 4 seconds by pressing <strong>G</strong>. The <strong>Andromeda galaxy</strong> has been added."',
+      'hist.163.desc2': 'Same day: <strong>dynamic coordinate shifting</strong> added (like in SpaceEngine). "In the future, this will make it possible to create a 1:1 TRAPPIST-1." Also added: <strong>Sedna</strong> with its real orbit.',
+      'hist.163.desc3': 'Full changelog: "Version 1.6.3 adds dynamic coordinate offsets, music, and a target-and-approach feature (using the G key). Camera controls have been overhauled — 1× now represents a fixed value — and Sedna, with its real-world orbit, has been added. In short, there are a great many changes!"',
+      'hist.163.desc4': 'Later (Nov 9): released on itch.io. There was a brief copyright panic about music first — all music was removed so the page could be published.',
+
+      'hist.17.date': 'Nov 9–10, 2026',
+      'hist.17.title': 'Precise orbits, new camera, loading screen and major optimization',
+      'hist.17.desc1': 'Nov 9: "In 1.6.4 (later renamed to 1.7) I refined all orbits — very heavily refined using NASA JPL J2000 data."',
+      'hist.17.desc2': 'Fully procedural planets, stars and gas giants were planned — but temporarily cancelled: "Claude ate 2 limits just to start writing a few lines of code, this would take ages to debug."',
+      'hist.17.desc3': 'Nov 10: "In 1.7 I added major optimizations. Removed lags, the game loads faster — but I had to sacrifice the ultra-quality textures."',
+      'hist.17.desc4': 'Full 1.7 changelog: "Major optimization — you may notice planets have worse textures, that\'s normal. Added a loading screen. Added <strong>Gonggong, Quaoar, Orcus, Salacia</strong>. Added music. Added Andromeda. Quite a lot was added. Also fully changed the camera mode. Added G-targeting."',
+      'hist.17.desc5': 'The build had to be urgently pulled due to Interstellar ("cornfield chase") copyright, after which it was re-uploaded with new music. Released on itch.io.',
+
+      'hist.171.date': 'Nov 11–12, 2026 · already available',
+      'hist.171.title': '"Full KSP inside"',
+      'hist.171.desc1': 'The headline release of recent days. Started with the Nov 11 teaser: "Fully controllable time will be added, along with 2 spacecraft — Voyager 1 and New Horizons — complete with their actual historical flight paths, accurate down to the minute or even the second. This is very hard to implement, so minor bugs are theoretically possible, but highly unlikely."',
+      'hist.171.desc2': 'Additional: "More music added (for example Hans Zimmer\'s score from Interstellar). I managed to optimize 16K-resolution cloud and surface textures for Earth. I also planned to include the Hubble Space Telescope — but Claude hit its limits again."',
+      'hist.171.desc3': 'Same day — atmospheric physics update: "The shader computes light scattering along each ray through a layer with exponentially decreasing density."',
+      'hist.171.desc4': 'The most ambitious step — <strong>a full KSP inside the game</strong>: "Claude has already written N-body bodies, a conic section system, and planetary spheres of influence. It now features a navball, an altimeter, atmospheric aerodynamics, and all the rest. In 1.7.1 you can expect a KSP experience — complete with 1:1 interstellar travel."',
+      'hist.171.desc5': 'Rocket controls: <strong>Space</strong> — ignition and stage separation; <strong>Shift / Ctrl</strong> — more/less thrust; <strong>Z / X</strong> — max/zero thrust; <strong>W S, A D, Q E</strong> — pitch, yaw, roll; <strong>1–0</strong> — autopilot modes; <strong>P</strong> — ascent autopilot; <strong>V</strong> — reset camera; <strong>mouse wheel</strong> — distance to rocket.',
+      'hist.171.desc6': 'Release note: "Update 1.7.1 is out! Everything above, sorry about the buggy navball — I\'ll fix it later, but even so the update is super-scale. Also, I added the full KSP inside 1.7.1."',
+
+      'rm.title': 'Roadmap',
+      'rm.sub': 'Development plans — from the current build to fully procedural star systems. Still one .exe.',
+      'rm.cur.tag': 'In progress',
+      'rm.cur.title': 'KSP-mode stabilization and navball fix',
+      'rm.cur.text': 'The full KSP is already working in 1.7.1, but the navball is still buggy — the author promised to fix it in the next patch. Meanwhile, more music from KSP and films.',
+      'rm.next.tag': 'Next',
+      'rm.next.title': 'TRAPPIST-1 and other exosystems',
+      'rm.next.text': 'Dynamic coordinate shifting (added in 1.6.3) is the foundation for exosystems. "In the future, this will make it possible to create a 1:1 TRAPPIST-1." Seven planets, tidal locking, 2:1 resonance, red dwarf.',
+      'rm.fut.tag': 'Long-term goal',
+      'rm.fut.title': 'Procedural star systems',
+      'rm.fut.text': 'Fully procedural generation: stellar spectral classes, rocky planets, gas giants, moons, icy bodies, rings and small objects. Temporarily delayed due to Claude limits, but on the roadmap.',
+
+      'foot.platform': 'Windows .exe',
+      'foot.trailer': 'trailer',
+      'foot.tag': 'Electron + WebGL 2.0 · made with love for space'
+    },
+
+    pt: {
+      'title': 'Planetarium 1:1 — Windows .exe',
+      'nav.features': 'Recursos',
+      'nav.trailer': 'Trailer',
+      'nav.req': 'Requisitos',
+      'nav.versions': 'Versões',
+      'nav.history': 'História',
+      'nav.roadmap': 'Roadmap',
+      'hero.badge': 'v1.7.1 · Windows .exe · Estável',
+      'hero.tagline': '<strong>Sistema Solar em escala real</strong> — aplicativo desktop nativo em Electron com renderização via <strong>WebGL 2.0 / Vulkan</strong>. Órbitas reais, o buraco negro Sgr A*, galáxias — e agora física completa do KSP dentro — em um único <strong>.exe</strong>, sem navegador e sem internet.',
+      'hero.download': 'Baixar para Windows (.exe)',
+      'hero.trailer': 'Assistir trailer',
+      'hero.trailer.badge': 'v1.6',
+      'hero.trailer.note': 'trailer gravado na versão 1.6 · YouTube',
+      'hero.pill.offline': 'Offline',
+      'hero.pill.after': 'após baixar',
+
+      'trailer.title': 'Trailer',
+      'trailer.sub': 'O trailer oficial de Planetarium. Gravado na versão 1.6 — o jogo recebeu muitas atualizações desde então, mas o espírito continua o mesmo.',
+      'trailer.card.title': 'Salsicha Espacial — game trailer',
+      'trailer.card.sub': 'YouTube · clique para abrir',
+
+      'feat.title': 'O que há dentro',
+      'feat.sub': 'Um simulador espacial completo com física total do KSP dentro — empacotado em um único .exe. Efemérides reais, escala 1:1 e gráficos nativos em Electron + WebGL 2.0 (Vulkan).',
+      'feat.1.title': 'Órbitas reais',
+      'feat.1.desc': 'Elementos keplerianos do JPL para planetas, planetas anões, cometas e Sedna. Posições recalculadas em tempo real com precisão de segundos.',
+      'feat.2.title': 'Física do KSP',
+      'feat.2.desc': 'Gravidade N-corpos, seções cônicas, esferas de influência dos planetas, navball, altímetro e aerodinâmica atmosférica — um simulador orbital completo.',
+      'feat.3.title': 'Sgr A* — buraco negro',
+      'feat.3.desc': 'Traçado de raios na métrica de Schwarzschild: anel de fótons, disco de acreção e lente gravitacional.',
+      'feat.4.title': 'Cometas e cinturões',
+      'feat.4.desc': 'Halley, Encke, Churyumov–Gerasimenko, Hale–Bopp. Mais o cinturão de asteroides e o cinturão de Kuiper com milhares de objetos.',
+      'feat.5.title': 'Sondas espaciais',
+      'feat.5.desc': 'Hubble, Voyager 1 e New Horizons com histórico real da missão — sobrevoos de Júpiter, Saturno, Plutão — com precisão de minutos.',
+      'feat.6.title': 'Galáxias',
+      'feat.6.desc': 'A Via Láctea com braços espirais e barra, a galáxia de Andrômeda e seus satélites M32 e M110.',
+      'feat.7.title': 'Auroras',
+      'feat.7.desc': 'Ovais magnéticos da Terra, Júpiter, Saturno, Urano e Netuno com inclinação correta do eixo magnético.',
+      'feat.8.title': 'Controle do tempo',
+      'feat.8.desc': 'Controle total do tempo: de ×1 (tempo real) a 10 anos por segundo, reverso, pausa, salto para qualquer data.',
+
+      'tech.title': 'Tecnologias',
+      'tech.sub': 'Não é uma página web nem um jogo de navegador — é um aplicativo desktop nativo. A renderização é feita via WebGL 2.0 com aceleração de hardware (backend DirectX 11 ou Vulkan).',
+      'tech.1.label': 'Shell',
+      'tech.1.desc': 'Aplicativo .exe standalone com janela própria. Inicia com duplo clique — sem navegador, sem instalação.',
+      'tech.2.label': 'Renderizador',
+      'tech.2.desc': 'Aceleração de hardware via Chromium ANGLE: backend DirectX 11 ou Vulkan — o app escolhe o caminho ideal.',
+      'tech.3.label': 'Plataforma',
+      'tech.3.desc': 'Windows 10 e 11, 64-bit. Arquivo .exe, distribuído via itch.io.',
+      'tech.4.label': 'Rede',
+      'tech.4.value': 'Offline',
+      'tech.4.desc': 'Todas as texturas e efemérides estão dentro do app. A internet só é necessária para baixar.',
+
+      'req.title': 'Requisitos do sistema',
+      'req.sub': 'O app é leve: roda até em um PC de escritório ou em um notebook antigo com gráficos integrados. Requer WebGL 2.0 (parte do DirectX 11) ou suporte a Vulkan — o app usa aceleração de hardware via Chromium.',
+      'req.min': 'Mínimos',
+      'req.rec': 'Recomendados',
+      'req.max': 'Máximos',
+      'req.row.os': 'SO',
+      'req.row.cpu': 'Processador',
+      'req.row.ram': 'RAM',
+      'req.row.gpu': 'GPU',
+      'req.row.api': 'API',
+      'req.row.disk': 'Espaço em disco',
+      'req.row.storage': 'Armazenamento',
+      'req.min.os': 'Windows 10 (64-bit)',
+      'req.min.cpu': 'Intel Core i3-3220<br>/ AMD Athlon X4 740',
+      'req.min.ram': '4 GB',
+      'req.min.gpu': 'Intel HD 4000 / Radeon R5<br>ou discreta 1 GB',
+      'req.min.api': 'DirectX 11 / WebGL 2.0',
+      'req.min.disk': '~300 MB',
+      'req.rec.os': 'Windows 10 / 11 (64-bit)',
+      'req.rec.cpu': 'Intel Core i5-6500<br>/ AMD Ryzen 3 1200',
+      'req.rec.ram': '8 GB',
+      'req.rec.gpu': 'GTX 750 Ti / RX 550<br>ou UHD 630 / Vega 8',
+      'req.rec.api': 'DirectX 11 / Vulkan',
+      'req.rec.disk': '~400 MB',
+      'req.max.os': 'Windows 11 (64-bit)',
+      'req.max.cpu': 'Intel Core i5-10400F<br>/ AMD Ryzen 5 3600',
+      'req.max.ram': '16 GB',
+      'req.max.gpu': 'GTX 1060 (6 GB)<br>/ RX 580 (8 GB)',
+      'req.max.api': 'Vulkan / DirectX 11',
+      'req.max.storage': 'SSD · ~500 MB',
+      'req.note': '<strong style="color:var(--fg)">Apenas Windows.</strong> O .exe é distribuído via itch.io. Builds para Linux e macOS ainda não estão disponíveis. É necessário suporte a WebGL 2.0 (DirectX 11) ou Vulkan — o app não inicia em GPUs sem essas APIs. Na configuração "máxima", instale em um SSD: carregamento de texturas e cenas mais rápido.',
+
+      'ver.title': 'Versões',
+      'ver.sub': 'A build v1.7.1 está disponível — ficou pública há muito pouco. O branch v1.8 está em desenvolvimento fechado.',
+      'ver.stable.tag': '● Estável · Disponível',
+      'ver.stable.sub': 'Versão pública atual',
+      'ver.stable.f1': 'Controle total do tempo — de ×1 a 10 anos por segundo',
+      'ver.stable.f2': 'Modo KSP: gravidade N-corpos, seções cônicas, esferas de influência, navball, altímetro, aerodinâmica',
+      'ver.stable.f3': '3 sondas — Hubble, Voyager 1, New Horizons — com histórico real da missão com precisão de minutos',
+      'ver.stable.f4': 'Atmosferas atualizadas — nova física de espalhamento',
+      'ver.stable.f5': 'Texturas 16K otimizadas de nuvens e superfície da Terra',
+      'ver.stable.f6': 'Mais música — incluindo Hans Zimmer de Interestelar',
+      'ver.stable.cta': 'Baixar .exe v1.7.1 →',
+      'ver.stable.trailer': '🎬 Trailer',
+      'ver.dev.tag': '🔒 Dev · Em desenvolvimento',
+      'ver.dev.sub': 'Próximo branch · não anunciado publicamente',
+      'ver.dev.platform': 'build privada',
+      'ver.dev.f1': 'Estabilidade melhorada do modo KSP e correção do navball com bugs',
+      'ver.dev.f2': 'Mais música de jogos e filmes (incluindo KSP e Interestelar)',
+      'ver.dev.f3': 'TRAPPIST-1 e outros exossistemas — graças ao deslocamento dinâmico de coordenadas',
+      'ver.dev.f4': 'Planetas, estrelas e gigantes gasosos procedurais',
+      'ver.dev.cta': '🔒 Bloqueado por enquanto',
+
+      'hist.title': 'Histórico de versões',
+      'hist.sub': 'Descrições detalhadas de cada atualização — como foram publicadas no Discord.',
+
+      'hist.11.date': '6 nov 2026 · 00:09',
+      'hist.11.title': 'Primeiro lançamento',
+      'hist.11.desc1': '"ATENÇÃO: o jogo foi lançado! 8 planetas — alguns sem texturas, na verdade muitos, simplesmente porque fiz este projeto às pressas. Em breve haverá mais."',
+      'hist.11.desc2': 'O que o primeiro lançamento já tinha: cinturão de asteroides com 4.000 asteroides, cinturão de Kuiper com 7.000 asteroides — dá para voar até eles e olhar. Enfim, joguem.',
+
+      'hist.12.date': '6 nov 2026 · 00:27',
+      'hist.12.title': 'Correções, limite e idiomas',
+      'hist.12.desc1': 'A atualização 1.2 foi lançada:',
+      'hist.12.desc2': '1. Cinturão de asteroides corrigido (obrigado <strong>DougDoug23</strong>). 2. Agora, se você voar longe demais (10.000 anos-luz), aparece uma mensagem pedindo para voltar (ideia de <strong>AERO ЧЕЛ</strong>). 3. Suporte a 2 novos idiomas adicionado.',
+
+      'hist.13.date': '6 nov 2026 · 04:07',
+      'hist.13.title': 'Superfície a partir de 500 metros e atmosfera real',
+      'hist.13.desc1': '"ATENÇÃO! A ATUALIZAÇÃO 1.3 SAIU. Novidades: carregamento de superfície começando em 500 metros (muito bruto, é plano, mas tudo será refinado). Todos os bugs relatados na seção bugs-and-suggestions foram corrigidos!"',
+      'hist.13.desc2': '"A atmosfera não é mais fantasiosa e não é mais plana! No futuro pretendo adaptar nuvens sobre isso. Também foram adicionadas 49 novas estrelas (sem nome, porque havia bugs graves de exibição)."',
+
+      'hist.14.date': '6 nov 2026 · 12:33',
+      'hist.14.title': 'Feedback da comunidade',
+      'hist.14.desc1': '"A ATUALIZAÇÃO 1.4 SAIU: adicionamos muito do que vocês sugeriram (obrigado <strong>AERO ЧЕЛ</strong>). Um bug do terreno foi corrigido."',
+
+      'hist.141.date': '6 nov 2026 · 12:44',
+      'hist.141.title': 'Atualização QoL',
+      'hist.141.desc1': '"Pequena atualização QoL (quality of life) 1.4.1: adicionadas configurações liga/desliga para exibição de asteroides, e as linhas de órbita e os rótulos foram movidos para o menu de configurações (acessível via Esc)."',
+
+      'hist.15.date': '6 nov 2026 · 19:37',
+      'hist.15.title': 'Migração para Electron + Vulkan',
+      'hist.15.desc1': '"A atualização 1.5 saiu! O jogo foi completamente migrado para o motor Electron com acesso direto à GPU via Vulkan. Texturas 16K da Terra adicionadas, e agora você pode ajustar a magnitude das estrelas nas configurações (padrão 6.0, do SpaceEngine)."',
+      'hist.15.desc2': '"O que não foi implementado (mas estava planejado): árvores — serão adicionadas em um patch futuro. Agora há 499 estrelas reais!"',
+
+      'hist.151.date': '6 nov 2026 · 22:04',
+      'hist.151.title': 'Primeira galáxia',
+      'hist.151.desc1': '"Nova atualização 1.5.1: uma galáxia foi adicionada (pode haver bugs — por exemplo, a galáxia pode ser visível da atmosfera mas não da superfície; o DeepSeek está me deixando louco)."',
+      'hist.151.desc2': '"A mensagem \'opa, você voou muito longe, quer voltar?\' agora dispara a uma distância de 1.000.000 de anos-luz. O resto parece inalterado."',
+
+      'hist.152.date': '7 nov 2026 · 00:11',
+      'hist.152.title': 'Galáxia realista',
+      'hist.152.desc1': '"A atualização 1.5.2 saiu! Uma forma de galáxia mais realista (oba, o Claude está disponível de novo!). O problema da \'lua negra\' foi corrigido. Todas as correções graças ao <strong>DougDoug23</strong>."',
+
+      'hist.16.date': '7 nov 2026 · 01:13',
+      'hist.16.title': '"Jornadas Galácticas"',
+      'hist.16.desc1': '"A atualização 1.6 saiu! Título da atualização: \'Jornadas Galácticas\'. Um modelo de galáxia foi adicionado — houve 3 versões, cada uma melhor que a anterior. Um buraco negro central foi incluído, com efeito de lente gravitacional. Além disso, uma textura realista da Lua foi adicionada."',
+      'hist.16.desc2': 'O trailer oficial do jogo saiu no YouTube no mesmo dia.',
+
+      'hist.161.date': '8 nov 2026 · 15:25',
+      'hist.161.title': 'Auroras, cometas, heliosfera e fundação KSP',
+      'hist.161.desc1': 'Uma atualização chave com uma longa lista de novidades:',
+      'hist.161.li1': '<strong>Auroras</strong> em planetas com campo magnético',
+      'hist.161.li2': 'Agora você pode <strong>entrar dentro de gigantes gasosos</strong>',
+      'hist.161.li3': 'Pressionar <strong>U</strong> oculta toda a interface — perfeito para screenshots lindos',
+      'hist.161.li4': '<strong>Cometas</strong> com caudas adicionados',
+      'hist.161.li5': '<strong>Discos de acreção ao redor de Sagittarius A*</strong> (o buraco negro no centro da Galáxia)',
+      'hist.161.li6': 'Agora você pode <strong>olhar em qualquer direção enquanto está na superfície da Terra</strong> — também para screenshots',
+      'hist.161.li7': 'Uma <strong>heliosfera</strong> foi adicionada (ativável nas configurações; as partículas estão um pouco estranhas — "culpa do Claude")',
+
+      'hist.162.date': '8 nov 2026 · 17:41 — 19:42',
+      'hist.162.title': 'Texturas para todo o Sistema Solar',
+      'hist.162.desc1': '"Notícias sobre a atualização 1.6.2: vou adicionar texturas para todo o Sistema Solar em vez de geração procedural — o jogo vai carregar muito mais devagar, então me perdoem. Adicionei texturas 16K de Júpiter (lol)."',
+      'hist.162.desc2': 'Durante o dia: texturas finalizadas para cada lua de Saturno, Urano e Netuno (só 2 luas — então foi rápido). Modelos de Marte, Saturno e Urano refeitos — mais qualidade, resolução maior. "O jogo está ficando cada vez mais pesado."',
+      'hist.162.desc3': 'Nota de lançamento: "Adicionadas texturas para todo o Sistema Solar, e retrabalhadas texturas de alguns planetas. A atualização foi feita manualmente — se houver muitos bugs, desculpe."',
+
+      'hist.163.date': '8–9 nov 2026 · teaser 20:22, lançamento 08:02',
+      'hist.163.title': 'Deslocamento dinâmico de coordenadas, música, G-targeting e Sedna',
+      'hist.163.desc1': 'Teaser: "Música do SpaceEngine foi adicionada. O jogo vai se parecer cada vez mais com o SpaceEngine, graças a um novo esquema de controle — aliás, agora você pode chegar a qualquer objeto em 4 segundos pressionando <strong>G</strong>. A <strong>galáxia de Andrômeda</strong> foi adicionada."',
+      'hist.163.desc2': 'No mesmo dia: <strong>deslocamento dinâmico de coordenadas</strong> adicionado (como no SpaceEngine). "No futuro, isso permitirá criar um TRAPPIST-1 em escala 1:1." Também adicionado: <strong>Sedna</strong> com sua órbita real.',
+      'hist.163.desc3': 'Changelog completo: "A versão 1.6.3 adiciona deslocamentos dinâmicos de coordenadas, música e um recurso de mirar e aproximar (usando a tecla G). Os controles da câmera foram reformulados — 1× agora representa um valor fixo — e Sedna, com sua órbita real, foi adicionada. Em resumo, há muitas mudanças!"',
+      'hist.163.desc4': 'Depois (9 de nov): lançado no itch.io. Antes houve um breve pânico sobre direitos autorais da música — toda a música foi removida para que a página pudesse ser publicada.',
+
+      'hist.17.date': '9–10 nov 2026',
+      'hist.17.title': 'Órbitas precisas, nova câmera, tela de carregamento e grande otimização',
+      'hist.17.desc1': '9 de novembro: "Na 1.6.4 (depois renomeada para 1.7) refinei todas as órbitas — muito refinadas com dados NASA JPL J2000."',
+      'hist.17.desc2': 'Planetas, estrelas e gigantes gasosos totalmente procedurais estavam planejados — mas temporariamente cancelados: "O Claude consumiu 2 limites só para começar a escrever algumas linhas de código, isso levaria séculos para depurar."',
+      'hist.17.desc3': '10 de novembro: "Na 1.7 adicionei grandes otimizações. Removi os lags, o jogo carrega mais rápido — mas tive que sacrificar as texturas de qualidade ultra."',
+      'hist.17.desc4': 'Changelog completo da 1.7: "Grande otimização — você pode notar que os planetas têm texturas piores, isso é normal. Adicionada tela de carregamento. Adicionados <strong>Gonggong, Quaoar, Orcus, Salacia</strong>. Adicionada música. Adicionada Andrômeda. Bastante coisa foi adicionada. Também mudei completamente o modo de câmera. Adicionado G-targeting."',
+      'hist.17.desc5': 'A build teve que ser urgentemente retirada devido aos direitos autorais de Interestelar ("cornfield chase"), depois foi recarregada com nova música. Lançada no itch.io.',
+
+      'hist.171.date': '11–12 nov 2026 · já disponível',
+      'hist.171.title': '"KSP completo dentro"',
+      'hist.171.desc1': 'O lançamento principal dos últimos dias. Começou com o teaser de 11 de novembro: "Controle total do tempo será adicionado, junto com 2 sondas — Voyager 1 e New Horizons — completas com suas trajetórias históricas reais, com precisão de minutos ou até segundos. Isso é muito difícil de implementar, então bugs menores são teoricamente possíveis, mas altamente improváveis."',
+      'hist.171.desc2': 'Adicional: "Mais música adicionada (por exemplo, a trilha de Hans Zimmer de Interestelar). Consegui otimizar texturas 16K de nuvens e superfície da Terra. Também planejei incluir o Telescópio Hubble — mas o Claude atingiu seus limites de novo."',
+      'hist.171.desc3': 'No mesmo dia — atualização da física atmosférica: "O shader calcula o espalhamento de luz ao longo de cada raio através de uma camada com densidade exponencialmente decrescente."',
+      'hist.171.desc4': 'O passo mais ambicioso — <strong>um KSP completo dentro do jogo</strong>: "O Claude já escreveu corpos N-corpos, um sistema de seções cônicas e esferas de influência planetárias. Agora tem navball, altímetro, aerodinâmica atmosférica e tudo o mais. Na 1.7.1 você pode esperar uma experiência KSP — completa com viagem interestelar 1:1."',
+      'hist.171.desc5': 'Controles do foguete: <strong>Espaço</strong> — ignição e separação de estágio; <strong>Shift / Ctrl</strong> — mais/menos empuxo; <strong>Z / X</strong> — empuxo máximo/zero; <strong>W S, A D, Q E</strong> — pitch, yaw, roll; <strong>1–0</strong> — modos de piloto automático; <strong>P</strong> — piloto automático de ascensão; <strong>V</strong> — resetar câmera; <strong>roda do mouse</strong> — distância até o foguete.',
+      'hist.171.desc6': 'Nota de lançamento: "A atualização 1.7.1 saiu! Tudo acima, desculpe pelo navball com bugs — vou consertá-lo depois, mas mesmo assim a atualização é superescala. Também adicionei o KSP completo dentro da 1.7.1."',
+
+      'rm.title': 'Roadmap',
+      'rm.sub': 'Planos de desenvolvimento — da build atual a sistemas estelares totalmente procedurais. Ainda em um único .exe.',
+      'rm.cur.tag': 'Em progresso',
+      'rm.cur.title': 'Estabilização do modo KSP e correção do navball',
+      'rm.cur.text': 'O KSP completo já está funcionando na 1.7.1, mas o navball ainda tem bugs — o autor prometeu consertar no próximo patch. Enquanto isso, mais música de KSP e filmes.',
+      'rm.next.tag': 'Próximo',
+      'rm.next.title': 'TRAPPIST-1 e outros exossistemas',
+      'rm.next.text': 'Deslocamento dinâmico de coordenadas (adicionado na 1.6.3) é a base para exossistemas. "No futuro, isso permitirá criar um TRAPPIST-1 em escala 1:1." Sete planetas, rotação travada, ressonância 2:1, anã vermelha.',
+      'rm.fut.tag': 'Objetivo de longo prazo',
+      'rm.fut.title': 'Sistemas estelares procedurais',
+      'rm.fut.text': 'Geração totalmente procedural: classes espectrais estelares, planetas rochosos, gigantes gasosos, luas, corpos gelados, anéis e pequenos objetos. Temporariamente adiado devido aos limites do Claude, mas no roadmap.',
+
+      'foot.platform': 'Windows .exe',
+      'foot.trailer': 'trailer',
+      'foot.tag': 'Electron + WebGL 2.0 · feito com amor pelo espaço'
+    }
+  };
+
+  const SUPPORTED = ['ru', 'en', 'pt'];
+  const FALLBACKS = {
+    uk: 'ru', be: 'ru', kk: 'ru', ky: 'ru', uz: 'ru', tg: 'ru', tt: 'ru', ba: 'ru', cv: 'ru', hy: 'ru',
+    gl: 'pt'
+  };
+
+  function detectLang() {
+    let stored = null;
+    try { stored = localStorage.getItem('pl_lang'); } catch (e) {}
+    if (stored && SUPPORTED.includes(stored)) return stored;
+    const sys = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
+    if (SUPPORTED.includes(sys)) return sys;
+    if (FALLBACKS[sys]) return FALLBACKS[sys];
+    return 'en';
+  }
+
+  function applyLang(lang) {
+    const t = I18N[lang] || I18N.en;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.textContent = t[key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+    if (t['title']) document.title = t['title'];
+    try { localStorage.setItem('pl_lang', lang); } catch (e) {}
+    const sel = document.getElementById('langSelect');
+    if (sel) sel.value = lang;
+  }
+
+  const langSelect = document.getElementById('langSelect');
+  const initialLang = detectLang();
+  langSelect.value = initialLang;
+  langSelect.addEventListener('change', e => applyLang(e.target.value));
+  applyLang(initialLang);
+</script>
+
+</body>
+</html>
